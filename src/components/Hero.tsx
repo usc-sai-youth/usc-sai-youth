@@ -38,28 +38,28 @@ export default function Hero() {
               <div className="feature-card">
                 <div className="feature-icon">💡</div>
                 <div>
-                  <h4>企業真實出題，絕非紙上談兵</h4>
+                  <h4 className="text-[#1f2937]">企業真實出題，絕非紙上談兵</h4>
                   <p>深入全家、全聯、老四川、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">🎓</div>
                 <div>
-                  <h4>國際專業認證：n8n Level 1 證照</h4>
+                  <h4 className="text-[#1f2937]">國際專業認證：n8n Level 1 證照</h4>
                   <p>課程全面導入主流自動化工作流工具，由專家親自指導，輔導學員於訓期內直接考取國際官方專業證照。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">💼</div>
                 <div>
-                  <h4>85+ 實務職缺，就業無縫對接</h4>
+                  <h4 className="text-[#1f2937]">85+ 實務職缺，就業無縫對接</h4>
                   <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">📁</div>
                 <div>
-                  <h4>求職必勝！個人精美實作作品集</h4>
+                  <h4 className="text-[#1f2937]">求職必勝！個人精美實作作品集</h4>
                   <p>實作專題成果將在導師指導下轉化為個人專屬作品集（包含 AI 原型、儀表板），讓你的履歷不再流於空談。</p>
                 </div>
               </div>
