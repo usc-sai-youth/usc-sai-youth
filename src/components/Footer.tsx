@@ -1,6 +1,9 @@
 import React from "react";
 import Image from "next/image";
 
+import moeaLogo from "@/public/logos/moea-logo.png"
+import uscLawLogo from "@/public/logos/usc-law-logo.png"
+
 export default function Footer() {
     return (
         <div className="pt-5 pb-4 bg-black text-white">
@@ -8,7 +11,7 @@ export default function Footer() {
                 <div className="flex flex-row items-center">
                     <p>主辦單位：</p>
                     <Image
-                        src="/logos/moea-logo.png"
+                        src={moeaLogo}
                         alt="Administration of Commerce, MOEA"
                         width={120}
                         height={40}
@@ -19,7 +22,7 @@ export default function Footer() {
                 <div className="flex flex-row items-center">
                     <p>承辦單位：</p>
                     <Image
-                        src="/logos/usc-law-logo.png"
+                        src={uscLawLogo}
                         alt="Shih Chien Law"
                         width={120}
                         height={40}
