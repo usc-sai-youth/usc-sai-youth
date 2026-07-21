@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <div className="pt-5 pb-4 bg-black text-white">
-            <div className="flex flex-row justify-center items-center gap-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
                 <div className="flex flex-row items-center">
                     <p>主辦單位：</p>
                     <Image
@@ -27,11 +27,15 @@ export default function Footer() {
                     />
                 </div>
             </div>
-            <div className="mt-5">
-                <p className="text-center">計畫主持人：郝鳳鳴 教授 | 計畫聯絡窗口：林志丞 助理教授 (0979-838-333)</p>
+            <div className="mt-10 flex flex-col md:flex-row justify-center items-center">
+                <p className="text-center">計畫主持人：郝鳳鳴 教授</p>
+                <span className="hidden md:inline mx-2">|</span>
+                <p className="text-center">計畫聯絡窗口：林志丞 助理教授 (0979-838-333)</p>
             </div>
-            <div className="mt-4">
-                <p className="text-center">聯絡信箱：cclin@g2.usc.edu.tw | 地址：台北市中山區大直街 70 號</p>
+            <div className="mt-5 flex flex-col md:flex-row justify-center items-center">
+                <p className="text-center">聯絡信箱：cclin@g2.usc.edu.tw</p>
+                <span className="hidden md:inline mx-2">|</span>
+                <p className="text-center">地址：台北市中山區大直街 70 號</p>
             </div>
             <div className="mt-10">
                 <h5 className="text-center text-slate-600">© 2026 實踐大學. All Rights Reserved. 個人資料保護與隱私權聲明</h5>
