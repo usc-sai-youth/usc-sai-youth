@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: isGithubActions ? '/usc-sai-youth' : '',
-  assetPrefix: isGithubActions ? '/usc-sai-youth/' : '',
 };
 
 export default nextConfig;
