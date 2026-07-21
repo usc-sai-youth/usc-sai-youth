@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import type { Viewport } from 'next';
 
 export const viewport: Viewport = {
+  themeColor: '#8CA6DB',
   viewportFit: 'cover',
 };
 
