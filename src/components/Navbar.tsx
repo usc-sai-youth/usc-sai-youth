@@ -37,12 +37,12 @@ export default function Navbar (){
                         className="hidden sm:inline h-[20px] md:h-[30px] w-auto"
                     />
                 </div>
-                <div className="hidden lg:inline lg:flex lg:items-center lg:text-[20px]">
-                    <a href="#section">區塊連結</a>
-                    <a href="#section">區塊連結</a>
-                    <a href="#section">區塊連結</a>
-                    <a href="#section">區塊連結</a>
-                    <button className="apply-btn">我要報名</button>
+                <div className="hidden lg:inline lg:flex lg:items-center lg:gap-2 lg:text-[18px]">
+                    <a href="#core">課程核心</a>
+                    <a href="#classes">實戰班別</a>
+                    <a href="#highlights">計畫亮點</a>
+                    <a href="#process">甄選流程</a>
+                    <button className="apply-btn ml-2">我要報名</button>
                 </div>
                 {menuOpen ? 
                     <XMarkIcon className="lg:hidden w-6 h-6 text-black hover:text-gray-500 cursor-pointer" onClick={toggleMenu}/> :
@@ -50,11 +50,11 @@ export default function Navbar (){
                 }
             </div>
             {menuOpen && (
-                <div className="glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-slate-400/30 text-black">
-                    <a href="#section" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">區塊連結</a>
-                    <a href="#section" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">區塊連結</a>
-                    <a href="#section" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">區塊連結</a>
-                    <a href="#section" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">區塊連結</a>
+                <div className="glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-slate-400/100 text-black backdrop-blur-md">
+                    <a href="#core" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">課程核心</a>
+                    <a href="#classes" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">實戰班別</a>
+                    <a href="#highlights" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">計畫亮點</a>
+                    <a href="#process" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">甄選流程</a>
                     <button 
                         onClick={closeMenu}
                         className="apply-btn w-full h-10"
