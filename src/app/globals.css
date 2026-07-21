@@ -50,3 +50,36 @@ h5 {
 p {
   font-size: 15px;
 }
+
+a {
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+button {
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.apply-btn {
+  background-image: linear-gradient(to bottom right, #95008A, #3300FC);
+  color: white;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.apply-btn:hover {
+}
