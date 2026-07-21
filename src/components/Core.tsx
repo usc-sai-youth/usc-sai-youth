@@ -1,7 +1,7 @@
 export default function Core() {
   return (
     <>
-      <section className="px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
+      <section id="core" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">三大核心能力，打造你的 AI 職場不敗防線</h2>
         <h4 className="mt-2 text-center text-gray-500">不談純理論！我們只培養企業爭相招募的「服務業 AI 應用型人才」。</h4>
         <div className="mt-5 flex flex-col md:flex-row gap-4">
