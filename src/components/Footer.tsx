@@ -7,10 +7,10 @@ import uscLawLogo from "@/public/logos/usc-law-logo.png"
 export default function Footer() {
   return (
     <>
-      <div className="py-20 bg-gradient-to-r from-[#3A6186] to-[#89253E] flex flex-col items-center">
-        <h2 className="text-white">別讓技術成為門檻，讓 AI 成為你職涯翻倍的跳板！</h2>
-        <h4 className="mt-3 text-gray-300">跨出這一步，讓你的職涯擁有新創科技思維，直接拿走高薪就業大廠的入門票！</h4>
-        <button className="mt-5 apply-btn w-[20rem] h-[5rem]">立即報名</button>
+      <div className="py-10 md:py-20 px-4 bg-gradient-to-r from-[#3A6186] to-[#89253E] flex flex-col items-center text-center">
+        <h2 className="text-white text-balance">別讓技術成為門檻，讓 AI 成為你職涯翻倍的跳板！</h2>
+        <h4 className="mt-3 text-gray-300 text-balance">跨出這一步，讓你的職涯擁有新創科技思維，直接拿走高薪就業大廠的入門票！</h4>
+        <button className="mt-5 apply-btn w-[20rem] h-[3rem] md:h-[5rem]">立即報名</button>
       </div>
       <div className="pt-5 pb-4 bg-black text-white">
         <div className="flex flex-col md:flex-row justify-center items-center gap-4">
