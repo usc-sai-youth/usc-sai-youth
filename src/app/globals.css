@@ -22,7 +22,7 @@
 } */
 
 html, body {
-  background: linear-gradient(to bottom, #8CA6DB 50%, #000000 50%);
+  background-color: linear-gradient(to bottom, #8CA6DB 50%, #000000 50%);
   margin: 0;
   padding: 0;
 }
