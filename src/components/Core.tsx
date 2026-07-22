@@ -22,8 +22,8 @@ export default function Core() {
         <h2 className="text-center">三大核心能力，打造你的 AI 職場不敗防線</h2>
         <h4 className="mt-2 text-center text-gray-500">不談純理論！我們只培養企業爭相招募的「服務業 AI 應用型人才」。</h4>
         <div className="mt-5 flex flex-col md:flex-row gap-4">
-          {data.map((item) => (
-            <div className="core-card">
+          {data.map((item, index) => (
+            <div className="core-card" key={index}>
               <div className="feature-icon">{item.icon}</div>
               <h4 className="text-[#1f2937]">{item.title}</h4>
               <p>{item.desc}</p>

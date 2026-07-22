@@ -26,14 +26,14 @@ export default function GeneralStructure() {
         <h4 className="mt-2 text-center text-gray-500">骨架相同、血肉差異化的客製化訓練，會用 AI 更懂資安法遵。</h4>
         <div className="mt-5 flex flex-col lg:flex-row gap-6 lg:gap:0">
           {data.map((stage, index) => (
-            <div className={index === 0 ? "lg:pr-4 lg:border-r-2 border-black" : "lg:pl-4"}>
+            <div className={index === 0 ? "lg:pr-4 lg:border-r-2 border-black" : "lg:pl-4"} key={index}>
               <div className="flex items-center">
                 <div className="numbering-icon">{index + 1}</div>
                 <h4 className="ml-2">{stage.title}</h4>
               </div>
               <div className="mt-2 ml-[20px] pl-3 py-5 border-l-2 border-black flex flex-col gap-4">
-                {stage.items.map((item) => (
-                  <div className="relative">
+                {stage.items.map((item, stageIndex) => (
+                  <div className="relative" key={stageIndex}>
                     <div className="absolute -left-[18px] top-1.5 w-2.5 h-2.5 rounded-full bg-black border-2 border-white" />
                     <p>{item.title}</p>
                     <h5>{item.desc}</h5>

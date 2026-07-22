@@ -1,15 +1,25 @@
 "use client";
 import React, {useState, useRef, useEffect} from "react";
+import Image, {type StaticImageData} from "next/image";
+import {courses} from "@/src/data/courses";
+import alphaLogo from "@/public/logos/alpha-logo.png"
+import familyMartLogo from "@/public/logos/family-mart-logo.png"
+import laoSzeChuanLogo from "@/public/logos/lao-sze-chuan-logo.png"
+import pxMartLogo from "@/public/logos/px-mart-logo.png"
+import sampoLogo from "@/public/logos/sampo-logo.png"
 
 export default function CourseDetail() {
   const [selected, setSelected] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const programmaticRef = useRef(false);
+  const settleTimer = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
     const pickCentered = () => {
+      if (programmaticRef.current) return;
       if (el.scrollWidth <= el.clientWidth + 1) return;
       const cards = el.querySelectorAll<HTMLElement>("[data-card]");
       const center = el.getBoundingClientRect().left + el.clientWidth / 2;
@@ -30,6 +40,12 @@ export default function CourseDetail() {
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(pickCentered);
+      if (programmaticRef.current) {
+        window.clearTimeout(settleTimer.current);
+        settleTimer.current = window.setTimeout(() => {
+          programmaticRef.current = false;
+        }, 100);
+      }
     };
 
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -54,134 +70,15 @@ export default function CourseDetail() {
     }
   }, []);
 
-  const data = [
-    {
-      title: "節力與智慧零售實戰班",
-      theme: "#1E1B4B",
-      corp: ["全家便利商店"],
-      desc: "主打鮮食備貨預測、智慧門市 SOP 助理、會員分群與個人化促銷、ESG AI 節電分析。",
-      fullDesc: "專為有意投入零售、生活服務與物流領域的青年量身打造。訓練全程攜手主要合作企業「全家便利商店」，帶領學員直接對接連鎖超商複合型場域的真實營運需求。在第一階段中，學員將扎實累積生成式 AI 提示詞設計、n8n 自動化工作流與核心零售數據分析等辦公與行銷硬實力。第二階段則由企業導師親自引導，實戰開發鮮食備貨預測、門市 SOP 助理及 AI 節電永續營運等落地解決方案，完訓後直接舉辦專屬面談以無縫對接優質職缺。",
-      startDate: new Date("2026-09-01"),
-      endDate: new Date("2026-10-31"),
-      location: "台北",
-      emphasis: "",
-      capacity: 20,
-      stages: [
-        [
-          {
-            unit: "",
-            desc: "",
-            ability: "",
-            credit: "",
-            instructor: "",
-            location: "",
-          }
-        ],
-        []
-      ]
-    },
-    {
-      title: "AI 餐飲營運與顧客體驗實戰班",
-      theme: "#7A1F3D",
-      corp: ["Alpha餐飲", "聲寶頑味"],
-      desc: "聚焦餐飲門店來客數與訂位預測、顧客評論情緒分析、日式款待服務 AI SOP 與品牌內容生成。",
-      fullDesc: "",
-      startDate: new Date("2026-10-01"),
-      endDate: new Date("2026-11-30"),
-      location: "台北",
-      emphasis: "",
-      capacity: 20,
-      stages: [
-        [
-          {
-            unit: "",
-            desc: "",
-            ability: "",
-            credit: "",
-            instructor: "",
-            location: "",
-          }
-        ],
-        []
-      ]
-    },
-    {
-      title: "智慧零售與餐飲展店營運實戰班",
-      theme: "#14432E",
-      corp: ["全聯福利中心", "老四川"],
-      desc: "核心包含超市生鮮商品管理、會員購物籃大數據分析、促銷檔期銷售預測與新展店排班。",
-      fullDesc: "",
-      startDate: new Date("2026-12-01"),
-      endDate: new Date("2026-1-31"),
-      location: "台北",
-      emphasis: "",
-      capacity: 20,
-      stages: [
-        [
-          {
-            unit: "",
-            desc: "",
-            ability: "",
-            credit: "",
-            instructor: "",
-            location: "",
-          }
-        ],
-        []
-      ]
-    },
-    {
-      title: "在地服務業 AI 營運與就業實戰專班",
-      theme: "#5A3210",
-      corp: ["全聯福利中心", "老四川", "全家便利商店"],
-      desc: "針對中南部區域展店人力配置、在地客群經營與行銷所設計，協助在地服務業數位轉型與就業。",
-      fullDesc: "",
-      startDate: new Date("2027-03-01"),
-      endDate: new Date("2027-4-30"),
-      location: "雲林",
-      emphasis: "",
-      capacity: 20,
-      stages: [
-        [
-          {
-            unit: "",
-            desc: "",
-            ability: "",
-            credit: "",
-            instructor: "",
-            location: "",
-          }
-        ],
-        []
-      ]
-    },
-  ]
-  // const data = [
-  //   {
-  //     title: "",
-  //     corp: [],
-  //     desc: "",
-  //     fullDesc: "",
-  //     startDate: "",
-  //     endDate: "",
-  //     location: "",
-  //     emphasis: "",
-  //     capacity: 20,
-  //     stages: [
-  //       [
-  //         {
-  //           unit: "",
-  //           desc: "",
-  //           ability: "",
-  //           credit: "",
-  //           instructor: "",
-  //           location: "",
-  //         }
-  //       ],
-  //       []
-  //     ]
-  //   }
-  // ]
+  const logos: Record<string, StaticImageData> = {
+    "全家便利商店": familyMartLogo,
+    "Alpha餐飲": alphaLogo,
+    "聲寶頑味": sampoLogo,
+    "全聯福利中心": pxMartLogo,
+    "老四川": laoSzeChuanLogo,
+  }
+
+  const data = courses;
 
   const getTaipeiParts = (date: Date) => {
     const parts = new Intl.DateTimeFormat("en-US", {
@@ -220,6 +117,12 @@ export default function CourseDetail() {
     const elRect = el.getBoundingClientRect();
     const target =
       el.scrollLeft + (cardRect.left + cardRect.width / 2) - (elRect.left + elRect.width / 2);
+    programmaticRef.current = true;
+    window.clearTimeout(settleTimer.current);
+    // Fallback in case the card is already centered and no scroll events fire.
+    settleTimer.current = window.setTimeout(() => {
+      programmaticRef.current = false;
+    }, 100);
     el.style.scrollSnapType = "none";
     el.scrollTo({ left: target, behavior: "smooth" });
     window.setTimeout(() => {
@@ -271,6 +174,75 @@ export default function CourseDetail() {
             </div>
           ))}
           </div>
+        </div>
+        <div className="mx-5 p-5 max-w-[100rem] rounded-2xl bg-[#26A69A]">
+          <h3 className="w-full text-center">{data[selected].title}</h3>
+          <h4 className="w-full text-center">{getYYYYMMDD(data[selected].startDate)} ~ {getYYYYMMDD(data[selected].endDate)}</h4>
+          <h4 className="mt-3">{data[selected].fullDesc}</h4>
+
+          <h3 className="mt-4">培訓重點</h3>
+          <h4 className="mt-1">{data[selected].emphasis}</h4>
+          <div className="mt-2 flex gap-4">
+            <div className="mt-1 px-4 py-4 w-fit flex flex-col justify-center items-center bg-white rounded-xl ">
+              <h4 className="pb-2 border-b-2 border-black">📍上課地點</h4>
+              <h4 className="pt-2">{data[selected].location}</h4>
+            </div>
+            <div className="mt-1 px-4 py-4 w-fit flex flex-col justify-center items-center bg-white rounded-xl ">
+              <h4 className="pb-2 border-b-2 border-black">👥招生人數</h4>
+              <h4 className="pt-2">{data[selected].capacity}</h4>
+            </div>
+          </div>
+
+          <h3>合作企業</h3>
+          <div className="flex gap-4">
+            {data[selected].corp.map((corp, index) => (
+              <div className="mt-1 px-4 py-4 w-fit flex flex-col justify-center items-center bg-white rounded-xl" key={index}>
+                <div className="pb-2 w-[100px] h-[100px] flex flex-col items-center">
+                  <Image
+                    src={logos[corp]}
+                    alt={corp}
+                    width={90}
+                    height={30}
+                    className="w-[100px] h-auto"
+                  />
+                </div>
+                <p className="pt-2 border-t-2 border-black">{corp}</p>
+              </div>
+            ))}
+          </div>
+          <h3>雙階段課程架構</h3>
+          {data[selected].stages.map((stage, stageId) => (
+            <div className="mt-2 p-5 bg-white rounded-2xl" key={stageId}>
+              <div className="flex justify-between">
+                <div>
+                  <h3>{stageId === 0 ? "階段一 次產業AI核心應用課程" : "階段二 企業專案實作"}</h3>
+                  <h4 className="mt-2">{stageId === 0 ? "聚焦於生成式 AI 職場工具與 n8n 自動化工作流的扎實演練，並融入核心資安法遵意識，全面奠定學員的智慧辦公與技術操作硬實力。" : "由指標企業親自出題，引導學員深入真實營運場域打造客製化 AI 解決方案，達成「學員解題、作品集累積與高就業率對接」的實戰效益。"}</h4>
+                </div>
+                <div>
+                  <h3>120h</h3>
+                </div>
+              </div>
+              {stage.map((unit, unitId) => (
+                <div className="mt-2 p-5 bg-gray-200 rounded-2xl" key={unitId}>
+                  <div className="flex justify-between">
+                    <div className="flex">
+                      <h4>{unitId + 1}</h4>
+                      <h4>{unit.unit}</h4>
+                    </div>
+                    <div className="flex">
+                      <h4>{unit.ability}</h4>
+                      <h4>{unit.credit}</h4>
+                    </div>
+                  </div>
+                  <h4 className="mt-2">{unit.desc}</h4>
+                  <div className="mt-2 flex">
+                    <h4>🎓講師：{unit.instructor}</h4>
+                    <h4>📍上課地點：{unit.location}</h4>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </>
