@@ -160,14 +160,15 @@ export default function CourseDetail() {
 
   return (
     <>
-      <section id="core" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
+      <section id="core" className="scroll-mt-24 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
         <h4 className="mt-2 text-center text-gray-500">四大次產業實戰班別，台北、雲林在地開課</h4>
-        <div className="mt-5 flex flex-row gap-4">
+        <div className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
+          <div className="flex flex-row gap-4 w-max mx-auto px-5">
           {data.map((cls, index) => (
             <div
               key={index}
-              className={`class-card ${index === selected ? "bg-[#1E1B4B]" : "bg-white"} `}
+              className={`class-card shrink-0 snap-center w-[80vw] max-w-[20rem] ${index === selected ? "selected bg-[#1E1B4B]" : "bg-white"} `}
             >
               <div className="flex justify-between">
                 <h5 className={`py-1 px-3 rounded-md ${index === selected ? "bg-[#26A69A] text-[#FFFFFF]" : "bg-[#D9E0FF] text-[#303F9F]"}`}>📍{cls.location}</h5>
@@ -181,9 +182,15 @@ export default function CourseDetail() {
                 <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#26A69A]" : "bg-[#D9E0FF]"}`}>{getDaysLeft(cls.startDate)}</h4>
                 <p className={index === selected ? "text-white" : ""}>天</p>
               </div>
-              <button className="mt-3 w-full bg-gray-200" disabled={index === selected}>{index === selected ? "正在顯示" : "查看詳情"}</button>
+              <button className="mt-3 w-full bg-gray-200" 
+                disabled={index === selected}
+                onClick={() => setSelected(index)}
+              >
+                {index === selected ? "正在顯示" : "查看詳情"}
+              </button>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </>

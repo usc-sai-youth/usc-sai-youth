@@ -289,5 +289,18 @@ hr {
   padding: 2rem;
   max-width: 20rem;
   border-radius: 20px;
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.class-card.selected {
+  transform: translateY(-0.75rem);
+  box-shadow: 0 1.25rem 2rem rgba(30, 27, 75, 0.25);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
