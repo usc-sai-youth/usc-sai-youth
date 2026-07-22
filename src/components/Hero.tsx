@@ -26,13 +26,13 @@ export default function Hero() {
               「共同核心 + 企業實作」雙軌培訓，攜手全家、全聯、老四川、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
             </h2>
             <div className="mt-8 w-full flex flex-wrap gap-3">
-              <button className="btn-primary">
+              <a href="#classes" className="btn-primary">
                 實戰班別
                 <span className="btn-arrow">→</span>
-              </button>
-              <button className="btn-ghost">
+              </a>
+              <a href="#structure" className="btn-ghost">
                 查看課程架構
-              </button>
+              </a>
             </div>
           </div>
           <div className="p-5 rounded-3xl glass flex flex-col 2xl:col-span-2 2xl:h-full">
@@ -42,28 +42,24 @@ export default function Hero() {
             </div>
             <div className="flex flex-col gap-3">
               <div className="feature-card">
-                <div className="feature-icon">💡</div>
                 <div>
                   <h4 className="text-white">企業真實出題，絕非紙上談兵</h4>
                   <p>深入全家、全聯、老四川、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。</p>
                 </div>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">🎓</div>
                 <div>
                   <h4 className="text-white">n8n 自動化工作流 × 專業能力認證</h4>
                   <p>課程全面導入主流自動化工作流工具 n8n，由業界專家親自指導實戰，並規劃專業能力認證，為你的履歷加值。</p>
                 </div>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">💼</div>
                 <div>
                   <h4 className="text-white">45 個實務職缺，就業無縫對接</h4>
                   <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
                 </div>
               </div>
               <div className="feature-card">
-                <div className="feature-icon">📁</div>
                 <div>
                   <h4 className="text-white">求職必勝！個人精美實作作品集</h4>
                   <p>實作專題成果將在導師指導下轉化為個人專屬作品集（包含 AI 原型、儀表板），讓你的履歷不再流於空談。</p>

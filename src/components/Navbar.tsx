@@ -5,8 +5,8 @@ import Image from "next/image";
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
-import uscLogo from "@/public/logos/usc-logo.png"
-import moeaLogo from "@/public/logos/moea-logo.png"
+import uscLawLogo from "@/public/logos/usc-law-logo.png"
+import moeaLogo from "@/public/logos/moea-white-logo.png"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,10 +20,10 @@ export default function Navbar() {
 
   return (
     <div className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
-      <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/30 shadow-lg shadow-black/10 rounded-full bg-white/20 backdrop-blur-md">
+      <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/10 shadow-lg shadow-black/40 rounded-full bg-white/[0.06] backdrop-blur-md">
         <div className="flex gap-2">
           <Image
-            src={uscLogo}
+            src={uscLawLogo}
             alt="Shih Chien University"
             width={90}
             height={30}
@@ -52,12 +52,12 @@ export default function Navbar() {
           </a>
         </div>
         {menuOpen ?
-          <XMarkIcon className="lg:hidden w-6 h-6 text-black hover:text-gray-500 cursor-pointer" onClick={toggleMenu} /> :
-          <Bars3Icon className="lg:hidden w-6 h-6 text-black hover:text-gray-500 cursor-pointer" onClick={toggleMenu} />
+          <XMarkIcon className="lg:hidden w-6 h-6 text-white hover:text-gray-300 cursor-pointer" onClick={toggleMenu} /> :
+          <Bars3Icon className="lg:hidden w-6 h-6 text-white hover:text-gray-300 cursor-pointer" onClick={toggleMenu} />
         }
       </div>
       {menuOpen && (
-        <div className="glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-slate-400/100 text-black backdrop-blur-md">
+        <div className="glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-[#0b1030]/95 text-white backdrop-blur-md">
           <a href="#core" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">課程核心</a>
           <a href="#classes" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">實戰班別</a>
           <a href="#highlights" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">計畫亮點</a>

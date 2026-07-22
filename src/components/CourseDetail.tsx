@@ -135,6 +135,7 @@ export default function CourseDetail() {
 
   const course = data[selected];
   const theme = course.theme;
+  const accent = course.accent;
   const stageMeta = [
     {
       title: "階段一 · 次產業 AI 核心應用課程",
@@ -150,7 +151,7 @@ export default function CourseDetail() {
     <>
       <section id="classes" className="scroll-mt-24 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
-        <h4 className="mt-2 text-center text-gray-500">零售 × 餐飲兩大次產業實戰班別，台北開課</h4>
+        <h4 className="mt-2 text-center text-slate-400">零售 × 餐飲兩大次產業實戰班別，台北開課</h4>
         <div ref={scrollRef} className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
           <div className="flex flex-row gap-4 w-max mx-auto px-[50%]">
           {data.map((cls, index) => (
@@ -167,23 +168,23 @@ export default function CourseDetail() {
                   selectCard(index, e.currentTarget);
                 }
               }}
-              className={`class-card cursor-pointer shrink-0 snap-center w-[80vw] max-w-[20rem] ${index === selected ? "selected bg-[#1E1B4B]" : "bg-white"} `}
+              className={`class-card cursor-pointer shrink-0 snap-center w-[80vw] max-w-[20rem] ${index === selected ? "selected bg-[#1c2b73]" : "bg-white/[0.05]"} `}
             >
               <div className="flex justify-between">
-                <h5 className={`py-1 px-3 rounded-md ${index === selected ? "bg-[#26A69A] text-[#FFFFFF]" : "bg-[#D9E0FF] text-[#303F9F]"}`}>📍{cls.location}</h5>
+                <h5 className={`py-1 px-3 rounded-md ${index === selected ? "bg-[#5B77FF] text-[#FFFFFF]" : "bg-[#D9E0FF] text-[#303F9F]"}`}>{cls.location}</h5>
                 <h5 className={index === selected ? "text-[#7986CB]" : ""}>{getMMDD(cls.startDate)} - {getMMDD(cls.endDate)}</h5>
               </div>
               <p className={`mt-3 font-black ${index === selected ? "text-white" : ""}`}>{cls.title}</p>
-              <h5 className={`mt-1 ${index === selected ? "text-[#26A69A]" : "text-[#303F9F]"}`}>合作企業：{cls.corp.join('/')}</h5>
+              <h5 className={`mt-1 ${index === selected ? "text-[#8CA0FF]" : "text-[#9DB0FF]"}`}>合作企業：{cls.corp.join('/')}</h5>
               <h5 className={`mt-8 ${index === selected ? "text-[#7986CB]" : ""}`}>{cls.desc}</h5>
               {getDaysLeft(cls.startDate) < 0 ? (
                 <div className="mt-3 w-full flex justify-center">
-                  <h4 className="py-1 px-3 rounded-xl bg-gray-200 text-gray-500">已開課</h4>
+                  <h4 className="py-1 px-3 rounded-xl bg-white/10 text-slate-300">已開課</h4>
                 </div>
               ) : (
                 <div className="mt-3 w-full flex gap-2 justify-center items-center">
                   <p className={index === selected ? "text-white" : ""}>距離開課還有</p>
-                  <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#26A69A]" : "bg-[#D9E0FF]"}`}>{getDaysLeft(cls.startDate)}</h4>
+                  <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#5B77FF]" : "bg-[#D9E0FF] text-[#1E2A6B]"}`}>{getDaysLeft(cls.startDate)}</h4>
                   <p className={index === selected ? "text-white" : ""}>天</p>
                 </div>
               )}
@@ -192,11 +193,11 @@ export default function CourseDetail() {
           </div>
         </div>
         <div className="mt-4 w-full max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="overflow-hidden rounded-3xl bg-white shadow-[0_20px_60px_-20px_rgba(30,27,75,0.25)] ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-3xl bg-white/[0.04] shadow-[0_30px_70px_-30px_rgba(61,90,255,0.5)] ring-1 ring-white/10">
             {/* 課程標題 Banner */}
             <div
               className="relative px-6 py-8 sm:px-10 sm:py-10 text-white"
-              style={{ backgroundImage: `linear-gradient(135deg, ${theme} 0%, #26A69A 140%)` }}
+              style={{ backgroundImage: `linear-gradient(135deg, ${theme} 0%, #5B77FF 140%)` }}
             >
               <div className="pointer-events-none absolute inset-0 opacity-[0.15]"
                 style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.9) 1.2px, transparent 1.2px)", backgroundSize: "18px 18px" }} />
@@ -210,13 +211,13 @@ export default function CourseDetail() {
                 </p>
                 <div className="mt-4 flex flex-wrap justify-center gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-medium ring-1 ring-white/25">
-                    📍 {course.location}
+                    {course.location}
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-medium ring-1 ring-white/25">
-                    👥 招生 {course.capacity} 人
+                    招生 {course.capacity} 人
                   </span>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-sm font-medium ring-1 ring-white/25">
-                    ⏱ 共 240 小時
+                    共 240 小時
                   </span>
                 </div>
               </div>
@@ -224,24 +225,22 @@ export default function CourseDetail() {
 
             {/* 內文 */}
             <div className="px-6 py-8 sm:px-10 sm:py-10">
-              <p className="text-gray-600 leading-relaxed">{course.fullDesc}</p>
+              <p className="text-slate-300 leading-relaxed">{course.fullDesc}</p>
 
               {/* 培訓重點 */}
-              <div className="mt-8 rounded-2xl border border-gray-100 bg-[var(--gray-bg)] p-5 sm:p-6">
+              <div className="mt-8 rounded-2xl border border-white/10 bg-[var(--gray-bg)] p-5 sm:p-6">
                 <div className="flex items-center gap-2">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg text-base"
-                    style={{ backgroundColor: `${theme}1A` }}>🎯</span>
-                  <h4 className="font-bold" style={{ color: theme }}>培訓重點</h4>
+                  <h4 className="font-bold" style={{ color: accent }}>培訓重點</h4>
                 </div>
-                <p className="mt-3 text-gray-600 leading-relaxed">{course.emphasis}</p>
+                <p className="mt-3 text-slate-300 leading-relaxed">{course.emphasis}</p>
               </div>
 
               {/* 合作企業 */}
-              <h4 className="mt-10 font-bold text-gray-900">合作企業</h4>
+              <h4 className="mt-10 font-bold text-white">合作企業</h4>
               <div className="mt-4 flex flex-wrap gap-3 sm:gap-4">
                 {course.corp.map((corp, index) => (
                   <div
-                    className="flex flex-1 min-w-[120px] max-w-[180px] flex-col items-center rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md"
+                    className="flex flex-1 min-w-[120px] max-w-[180px] flex-col items-center rounded-2xl border border-white/70 bg-white p-4 shadow-[0_16px_36px_-20px_rgba(61,90,255,0.6)] transition-transform hover:-translate-y-1"
                     key={index}
                   >
                     <div className="flex h-[80px] w-full items-center justify-center">
@@ -253,16 +252,16 @@ export default function CourseDetail() {
                         className="h-auto max-h-[70px] w-auto max-w-[90px] object-contain"
                       />
                     </div>
-                    <p className="mt-3 w-full border-t border-gray-100 pt-3 text-center font-medium !text-gray-700">{corp}</p>
+                    <p className="mt-3 w-full border-t border-slate-200 pt-3 text-center font-medium !text-slate-600">{corp}</p>
                   </div>
                 ))}
               </div>
 
               {/* 雙階段課程架構 */}
-              <h4 className="mt-10 font-bold text-gray-900">雙階段課程架構</h4>
+              <h4 className="mt-10 font-bold text-white">雙階段課程架構</h4>
               <div className="mt-4 flex flex-col gap-5">
                 {course.stages.map((stage, stageId) => (
-                  <div className="rounded-2xl border border-gray-100 bg-[var(--gray-bg)] p-4 sm:p-6" key={stageId}>
+                  <div className="rounded-2xl border border-white/10 bg-[var(--gray-bg)] p-4 sm:p-6" key={stageId}>
                     {/* 階段標題 */}
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div className="flex-1">
@@ -272,10 +271,10 @@ export default function CourseDetail() {
                         >
                           {stageMeta[stageId].title}
                         </span>
-                        <p className="mt-2.5 text-gray-600 leading-relaxed">{stageMeta[stageId].desc}</p>
+                        <p className="mt-2.5 text-slate-300 leading-relaxed">{stageMeta[stageId].desc}</p>
                       </div>
-                      <div className="flex shrink-0 flex-col items-center justify-center rounded-xl bg-white px-4 py-2 shadow-sm ring-1 ring-black/5 sm:min-w-[88px]">
-                        <span className="text-xl font-black leading-none" style={{ color: theme }}>120</span>
+                      <div className="flex shrink-0 flex-col items-center justify-center rounded-xl bg-white/[0.06] px-4 py-2 ring-1 ring-white/10 sm:min-w-[88px]">
+                        <span className="text-xl font-black leading-none" style={{ color: accent }}>120</span>
                         <span className="text-[11px] font-medium text-gray-400">小時</span>
                       </div>
                     </div>
@@ -298,7 +297,7 @@ export default function CourseDetail() {
                               toggleUnit(unitKey);
                             }
                           }}
-                          className="cursor-pointer rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:p-5"
+                          className="cursor-pointer rounded-xl bg-white/[0.045] p-4 ring-1 ring-white/10 transition hover:bg-white/[0.07] sm:p-5"
                         >
                           <div className="flex items-start gap-3">
                             <span
@@ -309,11 +308,11 @@ export default function CourseDetail() {
                             </span>
                             <div className="flex-1">
                               <div className="flex flex-wrap items-center justify-between gap-2">
-                                <h5 className="!text-[15px] font-bold !text-gray-900 leading-snug">{unit.unit}</h5>
+                                <h5 className="!text-[15px] font-bold !text-white leading-snug">{unit.unit}</h5>
                                 <div className="flex shrink-0 items-center gap-2">
                                   <span
                                     className="rounded-md px-2 py-0.5 text-xs font-bold"
-                                    style={{ color: theme, backgroundColor: `${theme}14` }}
+                                    style={{ color: accent, backgroundColor: `${accent}22` }}
                                   >
                                     {unit.credit}h
                                   </span>
@@ -329,7 +328,7 @@ export default function CourseDetail() {
                               </div>
                               <div className="mt-2 flex flex-wrap gap-1.5">
                                 {unit.ability.split(/[,，]/).map((tag, i) => (
-                                  <span key={i} className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+                                  <span key={i} className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-slate-300">
                                     {tag.trim()}
                                   </span>
                                 ))}
@@ -338,10 +337,10 @@ export default function CourseDetail() {
                                 className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                               >
                                 <div className="overflow-hidden">
-                                  <p className="mt-2.5 text-gray-600 leading-relaxed">{unit.desc}</p>
-                                  <div className="mt-3 flex flex-col gap-1.5 border-t border-gray-100 pt-3 text-xs text-gray-500 sm:flex-row sm:flex-wrap sm:gap-x-5">
-                                    <span className="inline-flex items-start gap-1">🎓 <span className="font-medium">講師：</span>{unit.instructor}</span>
-                                    {/* <span className="inline-flex items-start gap-1">📍 <span className="font-medium">地點：</span>{unit.location}</span> */}
+                                  <p className="mt-2.5 text-slate-300 leading-relaxed">{unit.desc}</p>
+                                  <div className="mt-3 flex flex-col gap-1.5 border-t border-white/10 pt-3 text-xs text-slate-400 sm:flex-row sm:flex-wrap sm:gap-x-5">
+                                    <span className="inline-flex items-start gap-1"><span className="font-medium">講師：</span>{unit.instructor}</span>
+                                    {/* <span className="inline-flex items-start gap-1"><span className="font-medium">地點：</span>{unit.location}</span> */}
                                   </div>
                                 </div>
                               </div>

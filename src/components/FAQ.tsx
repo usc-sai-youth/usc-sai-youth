@@ -41,7 +41,7 @@ export default function FAQ() {
     <>
       <section id="faq" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">常見問答 Q&amp;A</h2>
-        <h4 className="mt-2 text-center text-gray-500">報名前想知道的事，都幫你整理好了。</h4>
+        <h4 className="mt-2 text-center text-slate-400">報名前想知道的事，都幫你整理好了。</h4>
         <div className="mt-8 w-full max-w-3xl flex flex-col gap-3">
           {faqs.map((item, index) => {
             const isOpen = !!open[index];
@@ -58,11 +58,11 @@ export default function FAQ() {
                     toggle(index);
                   }
                 }}
-                className="cursor-pointer rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md"
+                className="cursor-pointer rounded-2xl bg-white/[0.045] p-5 ring-1 ring-white/10 transition hover:bg-white/[0.07]"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <h5 className="!text-[15px] font-bold !text-gray-900 leading-snug">
-                    <span className="mr-1.5 font-black text-[#3300FC]">Q.</span>{item.q}
+                  <h5 className="!text-[15px] font-bold !text-white leading-snug">
+                    <span className="mr-1.5 font-black text-[#3D5AFF]">Q.</span>{item.q}
                   </h5>
                   <svg
                     className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -77,8 +77,8 @@ export default function FAQ() {
                   className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="mt-3 text-gray-600 leading-relaxed">
-                      <span className="mr-1.5 font-black text-[#26A69A]">A.</span>{item.a}
+                    <p className="mt-3 text-slate-300 leading-relaxed">
+                      <span className="mr-1.5 font-black text-[#5B77FF]">A.</span>{item.a}
                     </p>
                   </div>
                 </div>

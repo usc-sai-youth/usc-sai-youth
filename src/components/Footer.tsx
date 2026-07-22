@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-import moeaLogo from "@/public/logos/moea-logo.png"
+import moeaLogo from "@/public/logos/moea-white-logo.png"
 import uscLawLogo from "@/public/logos/usc-law-logo.png"
 
 export default function Footer() {
   return (
     <>
-      <div className="py-10 md:py-20 px-4 bg-gradient-to-r from-[#3A6186] to-[#89253E] flex flex-col items-center text-center">
+      <div className="py-10 md:py-20 px-4 bg-gradient-to-br from-[#2E45E6] via-[#1B2A8A] to-[#0A1236] flex flex-col items-center text-center">
         <h2 className="text-white text-balance">別讓技術成為門檻，讓 AI 成為你職涯翻倍的跳板！</h2>
         <h4 className="mt-3 text-gray-300 text-balance">跨出這一步，讓你的職涯擁有新創科技思維，直接拿走高薪就業大廠的入門票！</h4>
         <a
@@ -54,7 +54,7 @@ export default function Footer() {
           <p className="text-center">地址：台北市中山區大直街 70 號</p>
         </div>
         <div className="mt-10">
-          <h5 className="text-center text-slate-600">© 2026 實踐大學. All Rights Reserved. 個人資料保護與隱私權聲明</h5>
+          <h5 className="text-center text-slate-500">© 2026 實踐大學. All Rights Reserved. 個人資料保護與隱私權聲明</h5>
         </div>
       </div>
     </>
