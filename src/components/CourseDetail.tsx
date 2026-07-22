@@ -10,6 +10,9 @@ import sampoLogo from "@/public/logos/sampo-logo.png"
 
 export default function CourseDetail() {
   const [selected, setSelected] = useState(0);
+  const [openUnits, setOpenUnits] = useState<Record<string, boolean>>({});
+  const toggleUnit = (key: string) =>
+    setOpenUnits((prev) => ({ ...prev, [key]: !prev[key] }));
   const scrollRef = useRef<HTMLDivElement>(null);
   const programmaticRef = useRef(false);
   const settleTimer = useRef<number | undefined>(undefined);
@@ -279,8 +282,24 @@ export default function CourseDetail() {
 
                     {/* 課程單元 */}
                     <div className="mt-4 flex flex-col gap-3">
-                      {stage.map((unit, unitId) => (
-                        <div className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:p-5" key={unitId}>
+                      {stage.map((unit, unitId) => {
+                        const unitKey = `${selected}-${stageId}-${unitId}`;
+                        const isOpen = !!openUnits[unitKey];
+                        return (
+                        <div
+                          key={unitId}
+                          role="button"
+                          tabIndex={0}
+                          aria-expanded={isOpen}
+                          onClick={() => toggleUnit(unitKey)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              toggleUnit(unitKey);
+                            }
+                          }}
+                          className="cursor-pointer rounded-xl bg-white p-4 shadow-sm ring-1 ring-black/5 transition-shadow hover:shadow-md sm:p-5"
+                        >
                           <div className="flex items-start gap-3">
                             <span
                               className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white"
@@ -291,12 +310,22 @@ export default function CourseDetail() {
                             <div className="flex-1">
                               <div className="flex flex-wrap items-center justify-between gap-2">
                                 <h5 className="!text-[15px] font-bold !text-gray-900 leading-snug">{unit.unit}</h5>
-                                <span
-                                  className="shrink-0 rounded-md px-2 py-0.5 text-xs font-bold"
-                                  style={{ color: theme, backgroundColor: `${theme}14` }}
-                                >
-                                  {unit.credit}h
-                                </span>
+                                <div className="flex shrink-0 items-center gap-2">
+                                  <span
+                                    className="rounded-md px-2 py-0.5 text-xs font-bold"
+                                    style={{ color: theme, backgroundColor: `${theme}14` }}
+                                  >
+                                    {unit.credit}h
+                                  </span>
+                                  <svg
+                                    className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                  >
+                                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                                  </svg>
+                                </div>
                               </div>
                               <div className="mt-2 flex flex-wrap gap-1.5">
                                 {unit.ability.split(/[,，]/).map((tag, i) => (
@@ -305,15 +334,22 @@ export default function CourseDetail() {
                                   </span>
                                 ))}
                               </div>
-                              <p className="mt-2.5 text-gray-600 leading-relaxed">{unit.desc}</p>
-                              <div className="mt-3 flex flex-col gap-1.5 border-t border-gray-100 pt-3 text-xs text-gray-500 sm:flex-row sm:flex-wrap sm:gap-x-5">
-                                <span className="inline-flex items-start gap-1">🎓 <span className="font-medium">講師：</span>{unit.instructor}</span>
-                                <span className="inline-flex items-start gap-1">📍 <span className="font-medium">地點：</span>{unit.location}</span>
+                              <div
+                                className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                              >
+                                <div className="overflow-hidden">
+                                  <p className="mt-2.5 text-gray-600 leading-relaxed">{unit.desc}</p>
+                                  <div className="mt-3 flex flex-col gap-1.5 border-t border-gray-100 pt-3 text-xs text-gray-500 sm:flex-row sm:flex-wrap sm:gap-x-5">
+                                    <span className="inline-flex items-start gap-1">🎓 <span className="font-medium">講師：</span>{unit.instructor}</span>
+                                    {/* <span className="inline-flex items-start gap-1">📍 <span className="font-medium">地點：</span>{unit.location}</span> */}
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
