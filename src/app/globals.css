@@ -89,7 +89,8 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-button {
+button,
+a.apply-btn {
   border-radius: 20px;
   padding: 8px 20px;
   font-weight: 600;
@@ -97,7 +98,8 @@ button {
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-button:hover:not(:disabled) {
+button:hover:not(:disabled),
+a.apply-btn:hover {
   transform: translateY(-2px);
 }
 

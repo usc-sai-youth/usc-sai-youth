@@ -64,7 +64,14 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <button className="apply-btn w-full mt-5">立即報名 →</button>
+            <a
+              href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="apply-btn w-full mt-5 inline-flex items-center justify-center text-center"
+            >
+              立即報名 →
+            </a>
           </div>
         </div>
       </section>

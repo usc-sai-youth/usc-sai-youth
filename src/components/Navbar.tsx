@@ -42,7 +42,14 @@ export default function Navbar() {
           <a href="#classes">實戰班別</a>
           <a href="#highlights">計畫亮點</a>
           <a href="#process">甄選流程</a>
-          <button className="apply-btn ml-2">我要報名</button>
+          <a
+            href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apply-btn ml-2 inline-flex items-center justify-center"
+          >
+            我要報名
+          </a>
         </div>
         {menuOpen ?
           <XMarkIcon className="lg:hidden w-6 h-6 text-black hover:text-gray-500 cursor-pointer" onClick={toggleMenu} /> :
@@ -55,12 +62,15 @@ export default function Navbar() {
           <a href="#classes" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">實戰班別</a>
           <a href="#highlights" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">計畫亮點</a>
           <a href="#process" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">甄選流程</a>
-          <button
+          <a
+            href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={closeMenu}
-            className="apply-btn w-full h-10"
+            className="apply-btn w-full h-10 inline-flex items-center justify-center"
           >
             我要報名
-          </button>
+          </a>
         </div>
       )}
     </div>
