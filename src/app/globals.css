@@ -289,6 +289,8 @@ hr {
   padding: 2rem;
   max-width: 20rem;
   border-radius: 20px;
+  border: 1px solid rgba(30, 27, 75, 0.08);
+  box-shadow: 0 6px 16px rgba(30, 27, 75, 0.08);
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 

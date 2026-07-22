@@ -1,8 +1,45 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 
 export default function CourseDetail() {
   const [selected, setSelected] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const pickCentered = () => {
+      if (el.scrollWidth <= el.clientWidth + 1) return;
+      const cards = el.querySelectorAll<HTMLElement>("[data-card]");
+      const center = el.getBoundingClientRect().left + el.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+      cards.forEach((card, i) => {
+        const rect = card.getBoundingClientRect();
+        const dist = Math.abs(rect.left + rect.width / 2 - center);
+        if (dist < bestDist) {
+          bestDist = dist;
+          best = i;
+        }
+      });
+      setSelected(best);
+    };
+
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(pickCentered);
+    };
+
+    el.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", pickCentered);
+    return () => {
+      el.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", pickCentered);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   const data = [
     {
@@ -158,17 +195,43 @@ export default function CourseDetail() {
     return daysLeft;
   }
 
+  const selectCard = (index: number, cardEl: HTMLElement) => {
+    setSelected(index);
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardRect = cardEl.getBoundingClientRect();
+    const elRect = el.getBoundingClientRect();
+    const target =
+      el.scrollLeft + (cardRect.left + cardRect.width / 2) - (elRect.left + elRect.width / 2);
+    el.style.scrollSnapType = "none";
+    el.scrollTo({ left: target, behavior: "smooth" });
+    window.setTimeout(() => {
+      el.style.scrollSnapType = "";
+    }, 600);
+  };
+
   return (
     <>
       <section id="core" className="scroll-mt-24 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
         <h4 className="mt-2 text-center text-gray-500">四大次產業實戰班別，台北、雲林在地開課</h4>
-        <div className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
-          <div className="flex flex-row gap-4 w-max mx-auto px-[10rem]">
+        <div ref={scrollRef} className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
+          <div className="flex flex-row gap-4 w-max mx-auto px-[50%]">
           {data.map((cls, index) => (
             <div
               key={index}
-              className={`class-card shrink-0 snap-center w-[80vw] max-w-[20rem] ${index === selected ? "selected bg-[#1E1B4B]" : "bg-white"} `}
+              data-card
+              role="button"
+              tabIndex={0}
+              aria-pressed={index === selected}
+              onClick={(e) => selectCard(index, e.currentTarget)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  selectCard(index, e.currentTarget);
+                }
+              }}
+              className={`class-card cursor-pointer shrink-0 snap-center w-[80vw] max-w-[20rem] ${index === selected ? "selected bg-[#1E1B4B]" : "bg-white"} `}
             >
               <div className="flex justify-between">
                 <h5 className={`py-1 px-3 rounded-md ${index === selected ? "bg-[#26A69A] text-[#FFFFFF]" : "bg-[#D9E0FF] text-[#303F9F]"}`}>📍{cls.location}</h5>
@@ -182,12 +245,6 @@ export default function CourseDetail() {
                 <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#26A69A]" : "bg-[#D9E0FF]"}`}>{getDaysLeft(cls.startDate)}</h4>
                 <p className={index === selected ? "text-white" : ""}>天</p>
               </div>
-              <button className="mt-3 w-full bg-gray-200" 
-                disabled={index === selected}
-                onClick={() => setSelected(index)}
-              >
-                {index === selected ? "正在顯示" : "查看詳情"}
-              </button>
             </div>
           ))}
           </div>
