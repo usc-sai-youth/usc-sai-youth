@@ -164,7 +164,7 @@ export default function CourseDetail() {
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
         <h4 className="mt-2 text-center text-gray-500">四大次產業實戰班別，台北、雲林在地開課</h4>
         <div className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
-          <div className="flex flex-row gap-4 w-max mx-auto px-5">
+          <div className="flex flex-row gap-4 w-max mx-auto px-[10rem]">
           {data.map((cls, index) => (
             <div
               key={index}

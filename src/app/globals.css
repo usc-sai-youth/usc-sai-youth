@@ -215,7 +215,7 @@ hr {
 
 .feature-card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   padding: 16px;
   border-radius: 18px;
