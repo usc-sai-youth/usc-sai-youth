@@ -41,6 +41,19 @@ export default function CourseDetail() {
     };
   }, []);
 
+  useEffect(() => {
+    const firstUpcoming = data.findIndex((c) => getDaysLeft(c.startDate) >= 0);
+    const initial = firstUpcoming === -1 ? 0 : firstUpcoming;
+    setSelected(initial);
+    const el = scrollRef.current;
+    const card = el?.querySelectorAll<HTMLElement>("[data-card]")[initial];
+    if (el && card) {
+      const cardRect = card.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      el.scrollLeft += cardRect.left + cardRect.width / 2 - (elRect.left + elRect.width / 2);
+    }
+  }, []);
+
   const data = [
     {
       title: "節力與智慧零售實戰班",
@@ -170,29 +183,33 @@ export default function CourseDetail() {
   //   }
   // ]
 
+  const getTaipeiParts = (date: Date) => {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Taipei",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).formatToParts(date);
+    const get = (type: string) => parts.find((p) => p.type === type)!.value;
+    return { year: get("year"), month: get("month"), day: get("day") };
+  };
+
   const getMMDD = (date: Date) => {
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
-    const formattedDate = `${mm}/${dd}`; 
-    return formattedDate
+    const { month, day } = getTaipeiParts(date);
+    return `${month}/${day}`;
   }
-  
+
   const getYYYYMMDD = (date: Date) => {
-    const yyyy = String(date.getFullYear)
-    const mm = String(date.getMonth() + 1).padStart(2, '0');
-    const dd = String(date.getDate()).padStart(2, '0');
-    const formattedDate = `${yyyy}/${mm}/${dd}`; 
-    return formattedDate
+    const { year, month, day } = getTaipeiParts(date);
+    return `${year}/${month}/${day}`;
   }
 
   const getDaysLeft = (targetDate: Date) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const target = new Date(targetDate);
-    target.setHours(0, 0, 0, 0);
-    const diffMs = target.getTime() - today.getTime();
-    const daysLeft = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-    return daysLeft;
+    const t = getTaipeiParts(targetDate);
+    const n = getTaipeiParts(new Date());
+    const targetDay = Date.UTC(Number(t.year), Number(t.month) - 1, Number(t.day));
+    const todayDay = Date.UTC(Number(n.year), Number(n.month) - 1, Number(n.day));
+    return Math.round((targetDay - todayDay) / (1000 * 60 * 60 * 24));
   }
 
   const selectCard = (index: number, cardEl: HTMLElement) => {
@@ -240,11 +257,17 @@ export default function CourseDetail() {
               <p className={`mt-3 font-black ${index === selected ? "text-white" : ""}`}>{cls.title}</p>
               <h5 className={`mt-1 ${index === selected ? "text-[#26A69A]" : "text-[#303F9F]"}`}>合作企業：{cls.corp.join('/')}</h5>
               <h5 className={`mt-8 ${index === selected ? "text-[#7986CB]" : ""}`}>{cls.desc}</h5>
-              <div className={`mt-3 w-full flex gap-2 justify-center items-center className={index === selected ? "text-white" : ""`}>
-                <p className={index === selected ? "text-white" : ""}>距離開課還有</p>
-                <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#26A69A]" : "bg-[#D9E0FF]"}`}>{getDaysLeft(cls.startDate)}</h4>
-                <p className={index === selected ? "text-white" : ""}>天</p>
-              </div>
+              {getDaysLeft(cls.startDate) < 0 ? (
+                <div className="mt-3 w-full flex justify-center">
+                  <h4 className="py-1 px-3 rounded-xl bg-gray-200 text-gray-500">已開課</h4>
+                </div>
+              ) : (
+                <div className="mt-3 w-full flex gap-2 justify-center items-center">
+                  <p className={index === selected ? "text-white" : ""}>距離開課還有</p>
+                  <h4 className={`py-1 px-3 rounded-xl ${index === selected ? "text-white bg-[#26A69A]" : "bg-[#D9E0FF]"}`}>{getDaysLeft(cls.startDate)}</h4>
+                  <p className={index === selected ? "text-white" : ""}>天</p>
+                </div>
+              )}
             </div>
           ))}
           </div>
