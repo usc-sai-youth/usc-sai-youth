@@ -38,10 +38,10 @@ export default function Navbar() {
           />
         </div>
         <div className="hidden lg:inline lg:flex lg:items-center lg:gap-2 lg:text-[18px]">
-          <a href="#core">課程核心</a>
+          <a href="#highlights">計畫量點</a>
           <a href="#classes">實戰班別</a>
-          <a href="#highlights">計畫亮點</a>
           <a href="#process">甄選流程</a>
+          <a href="#faq">FAQ</a>
           <a
             href="https://forms.gle/GshWTTKFPMVxH7Bx7"
             target="_blank"
