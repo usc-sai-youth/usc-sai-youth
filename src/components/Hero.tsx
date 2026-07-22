@@ -45,14 +45,14 @@ export default function Hero() {
               <div className="feature-card">
                 <div className="feature-icon">🎓</div>
                 <div>
-                  <h4 className="text-[#1f2937]">國際專業認證：n8n Level 1 證照</h4>
-                  <p>課程全面導入主流自動化工作流工具，由專家親自指導，輔導學員於訓期內直接考取國際官方專業證照。</p>
+                  <h4 className="text-[#1f2937]">n8n 自動化工作流 × 專業能力認證</h4>
+                  <p>課程全面導入主流自動化工作流工具 n8n，由業界專家親自指導實戰，並規劃專業能力認證，為你的履歷加值。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">💼</div>
                 <div>
-                  <h4 className="text-[#1f2937]">85+ 實務職缺，就業無縫對接</h4>
+                  <h4 className="text-[#1f2937]">45 個實務職缺，就業無縫對接</h4>
                   <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
                 </div>
               </div>
