@@ -3,8 +3,14 @@
 import React, {useEffect} from "react";
 
 export default function Hero() {
+    const stats = [
+      { value: "2", unit: "班", label: "零售 × 餐飲實戰班" },
+      { value: "240", unit: "hr", label: "雙階段培訓時數" },
+      { value: "45", unit: "個", label: "企業就業職缺" },
+      { value: "75", unit: "%", label: "就業媒合目標" },
+    ];
     return (
-        <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex justify-center items-center">
+        <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
         <div className="max-w-[110rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col gap-8 2xl:grid 2xl:grid-cols-7 2xl:gap-6 2xl:items-center">
           <div className="2xl:col-span-5">
             <div className="badge-pill">
@@ -16,7 +22,7 @@ export default function Hero() {
               讓你在 AI 時代<br/>
               無縫接軌就業！
             </h1>
-            <h2 className="mt-6 text-gray-700">
+            <h2 className="mt-6 text-slate-300">
               「共同核心 + 企業實作」雙軌培訓，攜手全家、全聯、老四川、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
             </h2>
             <div className="mt-8 w-full flex flex-wrap gap-3">
@@ -38,28 +44,28 @@ export default function Hero() {
               <div className="feature-card">
                 <div className="feature-icon">💡</div>
                 <div>
-                  <h4 className="text-[#1f2937]">企業真實出題，絕非紙上談兵</h4>
+                  <h4 className="text-white">企業真實出題，絕非紙上談兵</h4>
                   <p>深入全家、全聯、老四川、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">🎓</div>
                 <div>
-                  <h4 className="text-[#1f2937]">n8n 自動化工作流 × 專業能力認證</h4>
+                  <h4 className="text-white">n8n 自動化工作流 × 專業能力認證</h4>
                   <p>課程全面導入主流自動化工作流工具 n8n，由業界專家親自指導實戰，並規劃專業能力認證，為你的履歷加值。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">💼</div>
                 <div>
-                  <h4 className="text-[#1f2937]">45 個實務職缺，就業無縫對接</h4>
+                  <h4 className="text-white">45 個實務職缺，就業無縫對接</h4>
                   <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div className="feature-icon">📁</div>
                 <div>
-                  <h4 className="text-[#1f2937]">求職必勝！個人精美實作作品集</h4>
+                  <h4 className="text-white">求職必勝！個人精美實作作品集</h4>
                   <p>實作專題成果將在導師指導下轉化為個人專屬作品集（包含 AI 原型、儀表板），讓你的履歷不再流於空談。</p>
                 </div>
               </div>
@@ -72,6 +78,23 @@ export default function Hero() {
             >
               立即報名 →
             </a>
+          </div>
+        </div>
+
+        <div className="max-w-[110rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 mt-10 2xl:mt-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {stats.map((s, index) => (
+              <div
+                key={index}
+                className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 backdrop-blur-md shadow-[0_20px_50px_-28px_rgba(61,90,255,0.6)]"
+              >
+                <div className="flex items-end gap-1">
+                  <span className="stat-num">{s.value}</span>
+                  <span className="mb-1 text-sm font-bold text-[#3D5AFF]">{s.unit}</span>
+                </div>
+                <p className="mt-1.5 font-medium !text-slate-300">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
