@@ -242,19 +242,19 @@ export default function CourseDetail() {
 
               {/* 合作企業 */}
               <h4 className="mt-10 font-bold text-white">合作企業</h4>
-              <div className="mt-4 flex flex-wrap gap-3 sm:gap-4">
+              <div className="mt-4 flex flex-wrap justify-center gap-3 sm:gap-4">
                 {course.corp.map((corp, index) => (
                   <div
-                    className="flex flex-1 min-w-[120px] max-w-[180px] flex-col items-center rounded-2xl border border-white/70 bg-white p-4 shadow-[0_16px_36px_-20px_rgba(61,90,255,0.6)] transition-transform hover:-translate-y-1"
+                    className="flex w-[150px] sm:w-[160px] flex-col items-center rounded-2xl border border-white/70 bg-white p-4 shadow-[0_16px_36px_-20px_rgba(61,90,255,0.6)] transition-transform hover:-translate-y-1"
                     key={index}
                   >
-                    <div className="flex h-[80px] w-full items-center justify-center">
+                    <div className="flex h-[72px] w-full items-center justify-center">
                       <Image
                         src={logos[corp]}
                         alt={corp}
                         width={90}
                         height={30}
-                        className="h-auto max-h-[70px] w-auto max-w-[90px] object-contain"
+                        className="h-auto w-auto max-h-[56px] max-w-full object-contain"
                       />
                     </div>
                     <p className="mt-3 w-full border-t border-slate-200 pt-3 text-center font-medium !text-slate-600">{corp}</p>
@@ -311,43 +311,41 @@ export default function CourseDetail() {
                             >
                               {unitId + 1}
                             </span>
-                            <div className="flex-1">
-                              <div className="flex flex-wrap items-center justify-between gap-2">
-                                <h5 className="!text-[15px] font-bold !text-white leading-snug">{unit.unit}</h5>
-                                <div className="flex shrink-0 items-center gap-2">
-                                  <span
-                                    className="rounded-md px-2 py-0.5 text-xs font-bold"
-                                    style={{ color: accent, backgroundColor: `${accent}22` }}
-                                  >
-                                    {unit.credit}h
-                                  </span>
-                                  <svg
-                                    className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                    aria-hidden="true"
-                                  >
-                                    <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-                                  </svg>
-                                </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-start justify-between gap-2">
+                                <h5 className="!text-[15px] font-bold !text-white leading-snug break-words">{unit.unit}</h5>
+                                <svg
+                                  className={`mt-0.5 h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                >
+                                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                                </svg>
                               </div>
-                              <div className="mt-2 flex flex-wrap gap-1.5">
+                              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                                <span
+                                  className="rounded-md px-2 py-0.5 text-xs font-bold"
+                                  style={{ color: accent, backgroundColor: `${accent}22` }}
+                                >
+                                  {unit.credit}h
+                                </span>
                                 {unit.ability.split(/[,，]/).map((tag, i) => (
                                   <span key={i} className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-slate-300">
                                     {tag.trim()}
                                   </span>
                                 ))}
                               </div>
-                              <div
-                                className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-                              >
-                                <div className="overflow-hidden">
-                                  <p className="mt-2.5 text-slate-300 leading-relaxed">{unit.desc}</p>
-                                  <div className="mt-3 flex flex-col gap-1.5 border-t border-white/10 pt-3 text-xs text-slate-400 sm:flex-row sm:flex-wrap sm:gap-x-5">
-                                    <span className="inline-flex items-start gap-1"><span className="font-medium">講師：</span>{unit.instructor}</span>
-                                    {/* <span className="inline-flex items-start gap-1"><span className="font-medium">地點：</span>{unit.location}</span> */}
-                                  </div>
-                                </div>
+                            </div>
+                          </div>
+                          <div
+                            className={`grid transition-all duration-300 ease-out sm:pl-10 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                          >
+                            <div className="overflow-hidden">
+                              <p className="mt-2.5 text-slate-300 leading-relaxed">{unit.desc}</p>
+                              <div className="mt-3 flex flex-col gap-1.5 border-t border-white/10 pt-3 text-xs text-slate-400 sm:flex-row sm:flex-wrap sm:gap-x-5">
+                                <span className="inline-flex items-start gap-1"><span className="font-medium">講師：</span>{unit.instructor}</span>
+                                {/* <span className="inline-flex items-start gap-1"><span className="font-medium">地點：</span>{unit.location}</span> */}
                               </div>
                             </div>
                           </div>
