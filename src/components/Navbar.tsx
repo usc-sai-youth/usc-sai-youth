@@ -22,20 +22,36 @@ export default function Navbar() {
     <div className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
       <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/10 shadow-lg shadow-black/40 rounded-full bg-white/[0.06] backdrop-blur-md">
         <div className="flex gap-2">
-          <Image
-            src={uscLawLogo}
-            alt="Shih Chien University"
-            width={90}
-            height={30}
-            className="h-[20px] md:h-[30px] w-auto"
-          />
-          <Image
-            src={moeaLogo}
-            alt="Administration of Commerce, MOEA"
-            width={90}
-            height={30}
-            className="hidden sm:inline h-[20px] md:h-[30px] w-auto"
-          />
+          <a
+            href="https://law.usc.edu.tw/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="實踐大學法學院"
+            className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src={uscLawLogo}
+              alt="Shih Chien University"
+              width={90}
+              height={30}
+              className="h-[20px] md:h-[30px] w-auto"
+            />
+          </a>
+          <a
+            href="https://www.aoc.gov.tw/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="經濟部商業發展署"
+            className="hidden sm:inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src={moeaLogo}
+              alt="Administration of Commerce, MOEA"
+              width={90}
+              height={30}
+              className="h-[20px] md:h-[30px] w-auto"
+            />
+          </a>
         </div>
         <div className="hidden lg:inline lg:flex lg:items-center lg:gap-2 lg:text-[18px]">
           <a href="#highlights">計畫亮點</a>
