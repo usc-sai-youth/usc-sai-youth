@@ -152,6 +152,11 @@ export default function CourseDetail() {
       <section id="classes" className="scroll-mt-24 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
         <h4 className="mt-2 text-center text-slate-400">零售 × 餐飲兩大次產業實戰班別，台北開課</h4>
+        <div className="hint-bob mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 text-sm text-slate-300 backdrop-blur-md">
+          <span className="font-bold text-[#8CA0FF]">←</span>
+          點擊卡片或左右滑動，選擇你的班別
+          <span className="font-bold text-[#8CA0FF]">→</span>
+        </div>
         <div ref={scrollRef} className="no-scrollbar mt-3 w-full overflow-x-auto overscroll-x-contain scroll-smooth snap-x snap-mandatory pt-6 pb-10">
           <div className="flex flex-row gap-4 w-max mx-auto px-[50%]">
           {data.map((cls, index) => (

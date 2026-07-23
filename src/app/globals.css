@@ -326,6 +326,41 @@ hr {
   box-shadow: 0 1.6rem 3rem -0.6rem rgba(61, 90, 255, 0.7);
 }
 
+@keyframes hintBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+.hint-bob {
+  animation: hintBob 1.6s ease-in-out infinite;
+}
+
+@keyframes cardHintGlow {
+  0%, 100% {
+    box-shadow: 0 24px 50px -30px rgba(61, 90, 255, 0.45);
+    border-color: rgba(255, 255, 255, 0.10);
+  }
+  50% {
+    box-shadow: 0 26px 64px -22px rgba(61, 90, 255, 0.9);
+    border-color: rgba(124, 145, 255, 0.55);
+  }
+}
+
+.class-card:not(.selected) {
+  animation: cardHintGlow 2.4s ease-in-out infinite;
+}
+
+.class-card:not(.selected):hover {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hint-bob,
+  .class-card:not(.selected) {
+    animation: none;
+  }
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
