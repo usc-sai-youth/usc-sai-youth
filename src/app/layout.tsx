@@ -45,6 +45,14 @@ export default function RootLayout({
         <footer>
           <Footer />
         </footer>
+        <a
+          href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="apply-btn lg:hidden fixed bottom-5 right-5 z-50 px-6 py-3 text-[15px] font-bold shadow-2xl"
+        >
+          立即報名
+        </a>
       </body>
     </html>
   );
