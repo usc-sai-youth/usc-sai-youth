@@ -1,6 +1,8 @@
 "use client";
 
 import React, {useEffect} from "react";
+import Image from "next/image";
+import uscLawLogo from "@/public/logos/usc-law-logo.png"
 
 export default function Hero() {
     const stats = [
@@ -13,9 +15,28 @@ export default function Hero() {
         <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
         <div className="max-w-[110rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col gap-8 2xl:grid 2xl:grid-cols-7 2xl:gap-6 2xl:items-center">
           <div className="2xl:col-span-5">
-            <div className="badge-pill">
-              <span className="badge-tag">115-116 年度</span>
-              強化服務業人才韌性計畫
+            <div className="flex flex-col md:flex-row gap-4 md:gap-2 md:items-center">
+              <a
+                href="https://law.usc.edu.tw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="實踐大學法學院"
+                className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src={uscLawLogo}
+                  alt="Shih Chien University"
+                  width={150}
+                  height={50}
+                  className="h-[40px] md:h-[50px] w-auto"
+                />
+              </a>
+              <div>
+                <div className="badge-pill">
+                  <span className="badge-tag">115-116 年度</span>
+                  強化服務業人才韌性計畫
+                </div>
+              </div>
             </div>
             <h1 className="mt-6">
               企業真實痛點出題！<br/>
