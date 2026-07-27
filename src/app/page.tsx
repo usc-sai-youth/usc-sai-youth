@@ -8,11 +8,13 @@ import GeneralStructure from "../components/GeneralStructure";
 import Hero from "../components/Hero";
 import Incentive from "../components/Incentive";
 import StudentGuide from "../components/StudentGuide";
+import WhyThisClass from "../components/WhyThisClass";
 
 export default function Home() {
   return (
     <>
       <Hero/>
+      <WhyThisClass/>
       <Core/>
       <GeneralStructure/>
       <CourseDetail/>
