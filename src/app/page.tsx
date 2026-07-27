@@ -7,6 +7,7 @@ import FAQ from "../components/FAQ";
 import GeneralStructure from "../components/GeneralStructure";
 import Hero from "../components/Hero";
 import Incentive from "../components/Incentive";
+import StudentGuide from "../components/StudentGuide";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CourseDetail/>
       <Incentive/>
       <Admission/>
+      <StudentGuide/>
       <FAQ/>
     </>
   );
