@@ -22,6 +22,15 @@ export default function Admission() {
     "對合作企業職缺具明確興趣，願於完訓後接受面談媒合",
   ];
 
+  const documents = [
+    "填列培訓學員申請表",
+    "身分證正反影本",
+    "最高學歷畢業證書影本",
+    "最高學歷學校成績單影本",
+    "蒐集個人資料告知事項暨個人資料提供同意書",
+    "如有工作經驗，請檢具勞工保險異動紀錄或相關切結文件",
+  ];
+
   const steps = [
     {
       title: "資格審查",
@@ -64,6 +73,22 @@ export default function Admission() {
               {pluses.map((item, index) => (
                 <li className="flex items-start gap-2 text-slate-300" key={index}>
                   <span className="mt-0.5 font-bold text-[#3D5AFF]">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 繳交報名資料 */}
+          <div className="mt-6 rounded-2xl border border-white/10 bg-[var(--gray-bg)] p-5 sm:p-6">
+            <div className="flex items-center gap-2">
+              <h4 className="font-bold text-white">繳交報名資料</h4>
+            </div>
+            <p className="mt-2 text-slate-400">應檢附資料如下：</p>
+            <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+              {documents.map((item, index) => (
+                <li className="flex items-start gap-2 text-slate-300" key={index}>
+                  <span className="mt-0.5 font-bold text-[#3D5AFF]">•</span>
                   <span>{item}</span>
                 </li>
               ))}
