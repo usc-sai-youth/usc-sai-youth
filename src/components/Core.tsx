@@ -2,7 +2,7 @@ export default function Core() {
   const highlights = [
     {
       title: "五大指標企業真實出題",
-      desc: "全家、全聯、老四川、Alpha 阿爾法與聲寶頑味共同出題，提供企業專題、業師指導與 45 個就業職缺。",
+      desc: "全家、全聯、老四川、Alpha 阿爾法與聲寶頑味共同出題，提供企業專題、業師指導與就業職缺。",
     },
     {
       title: "企業出題 × 學員解題",

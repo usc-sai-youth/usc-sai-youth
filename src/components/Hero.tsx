@@ -6,7 +6,7 @@ export default function Hero() {
     const stats = [
       { value: "2", unit: "班", label: "零售 × 餐飲實戰班" },
       { value: "240", unit: "hr", label: "雙階段培訓時數" },
-      { value: "45", unit: "個", label: "企業就業職缺" },
+      { value: "5", unit: "萬", label: "學習獎勵金" },
       { value: "75", unit: "%", label: "就業媒合目標" },
     ];
     return (
@@ -55,14 +55,14 @@ export default function Hero() {
               </div>
               <div className="feature-card">
                 <div>
-                  <h4 className="text-white">45 個實務職缺，就業無縫對接</h4>
+                  <h4 className="text-white">企業面談媒合，就業無縫對接</h4>
                   <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
                 </div>
               </div>
               <div className="feature-card">
                 <div>
                   <h4 className="text-white">求職必勝！個人精美實作作品集</h4>
-                  <p>實作專題成果將在導師指導下轉化為個人專屬作品集（包含 AI 原型、儀表板），讓你的履歷不再流於空談。</p>
+                  <p>實作專題成果將在導師指導下轉化為個人專屬作品集，讓你的履歷不再流於空談。</p>
                 </div>
               </div>
             </div>
