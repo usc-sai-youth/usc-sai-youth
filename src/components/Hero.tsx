@@ -1,5 +1,7 @@
 "use client";
 
+import { CanvasText } from "./ui/CanvasText";
+
 export default function Hero() {
   return (
     <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
@@ -7,7 +9,15 @@ export default function Hero() {
 
         <h1 className="mt-2">
           別讓技術成為門檻<br/>
-          讓 <span className="hero-highlight">AI</span> 成為你職涯翻倍的跳板！
+          讓 <CanvasText
+            text="AI"
+            className="align-baseline drop-shadow-[0_0_20px_rgba(51,85,255,0.85)]"
+            backgroundClassName="bg-[#1A2FCC]"
+            colors={["#3355FF", "#2C4EFF", "#4466FF", "#1F3EE0", "#3C5CFF"]}
+            lineWidth={2.5}
+            lineGap={6}
+            curveIntensity={45}
+          /> 成為你職涯翻倍的跳板！
         </h1>
 
         <p className="max-w-xl text-base md:text-lg !text-slate-300">
