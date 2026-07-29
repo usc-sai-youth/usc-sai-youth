@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import moeaLogo from "@/public/logos/moea-white-logo.png"
-import uscLawLogo from "@/public/logos/use-law-white-logo.png"
+import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
 
 export default function Footer() {
   return (

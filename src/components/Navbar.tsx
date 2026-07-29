@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
-import uscLawLogo from "@/public/logos/use-law-white-logo.png"
+import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
 import moeaLogo from "@/public/logos/moea-white-logo.png"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

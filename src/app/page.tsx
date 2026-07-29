@@ -19,9 +19,9 @@ export default function Home() {
       <Reveal><ProgramHighlights/></Reveal>
       <Reveal><WhyThisClass/></Reveal>
       <Reveal><Core/></Reveal>
+      <Reveal><Incentive/></Reveal>
       <Reveal><GeneralStructure/></Reveal>
       <Reveal><CourseDetail/></Reveal>
-      <Reveal><Incentive/></Reveal>
       <Reveal><Admission/></Reveal>
       <Reveal><StudentGuide/></Reveal>
       <Reveal><FAQ/></Reveal>
