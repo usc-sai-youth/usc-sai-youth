@@ -9,8 +9,8 @@ export default function Core() {
       desc: "240 小時雙階段培訓，從 AI 工具實戰一路練到解決企業真實痛點，做中學最扎實。",
     },
     {
-      title: "免費參訓 × 學習獎勵金",
-      desc: "錄取學員免繳課程費用，完成兩階段培訓並符合資格者，另可依規定領取學習獎勵金。",
+      title: "免費參訓 × 5萬學習獎勵金",
+      desc: "錄取學員免繳課程費用，完成兩階段培訓並符合資格者，再領取最高5萬學習獎勵金。",
     },
     {
       title: "專屬 AI 實戰作品集",
@@ -45,7 +45,7 @@ export default function Core() {
     <>
       <section id="highlights" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--white-bg)]">
         <h2 className="text-center">計畫亮點</h2>
-        <h4 className="mt-2 text-center text-slate-400">不只教你用 AI，更幫你把成果變成職涯的入場券。</h4>
+        <h4 className="mt-2 text-center text-slate-400">不只教你用 AI，更幫你拿到AI職涯入場券。</h4>
         <div className="mt-8 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {highlights.map((item, index) => (
             <div className="core-card !items-start !max-w-none h-full" key={index}>

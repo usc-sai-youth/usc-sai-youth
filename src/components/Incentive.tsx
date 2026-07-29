@@ -2,12 +2,12 @@ export default function Incentive() {
   const rewards = [
     {
       stage: "第一階段獎勵金",
-      amount: "NT$20,000",
+      amount: "新台幣20,000元",
       cond: "於第一階段「次產業 AI 應用課程」，出席時數達該階段總課程時數九成以上，並完成後測筆試、成績達 80 分（含）以上，即符合請領資格。",
     },
     {
       stage: "第二階段獎勵金",
-      amount: "NT$30,000",
+      amount: "新台幣30,000元",
       cond: "於第二階段「企業專題實作」，實作出席時數達該階段總時數九成以上，並完成每組一份結訓專題報告與公開發表，經學研界講師聯合評核通過，即符合請領資格。",
     },
   ];
@@ -16,7 +16,7 @@ export default function Incentive() {
     <>
       <section id="reward" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--white-bg)]">
         <span className="card-eyebrow">學習獎勵金</span>
-        <h2 className="mt-3 text-center">完訓最高可領 NT$50,000</h2>
+        <h2 className="mt-3 text-center">完訓最高可領 新台幣50,000元</h2>
         <h4 className="mt-2 text-center text-slate-400 max-w-2xl text-balance">
           從出席、測驗、實作到成果報告，我們把「獎勵條件」與「評量檢核」合併呈現——只要按部就班全程投入，每一分努力都算數。
         </h4>
@@ -35,7 +35,7 @@ export default function Incentive() {
         </div>
 
         <p className="mt-6 text-center text-slate-400 text-sm max-w-2xl">
-          兩階段合計最高 NT$50,000；獎勵金依實際出席、測驗成績、實作成果與發表評核結果核發。
+          兩階段合計最高 新台幣50,000元；獎勵金依實際出席、測驗成績、實作成果與發表評核結果核發。
         </p>
       </section>
     </>

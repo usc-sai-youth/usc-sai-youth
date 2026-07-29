@@ -1,119 +1,57 @@
 "use client";
 
-import React, {useEffect} from "react";
 import Image from "next/image";
-import uscLawLogo from "@/public/logos/usc-law-logo.png"
+import uscLawLogo from "@/public/logos/use-law-white-logo.png"
 
 export default function Hero() {
-    const stats = [
-      { value: "2", unit: "班", label: "零售 × 餐飲實戰班" },
-      { value: "240", unit: "hr", label: "雙階段培訓時數" },
-      { value: "5", unit: "萬", label: "學習獎勵金" },
-      { value: "75", unit: "%", label: "就業媒合目標" },
-    ];
-    return (
-        <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
-        <div className="max-w-[110rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col gap-8 2xl:grid 2xl:grid-cols-7 2xl:gap-6 2xl:items-center">
-          <div className="2xl:col-span-5">
-            <div className="flex flex-col md:flex-row gap-4 md:gap-2 md:items-center">
-              <a
-                href="https://law.usc.edu.tw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="實踐大學法學院"
-                className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
-              >
-                <Image
-                  src={uscLawLogo}
-                  alt="Shih Chien University"
-                  width={150}
-                  height={50}
-                  className="h-[40px] md:h-[50px] w-auto"
-                />
-              </a>
-              <div>
-                <div className="badge-pill">
-                  <span className="badge-tag">115-116 年度</span>
-                  強化服務業人才韌性計畫
-                </div>
-              </div>
-            </div>
-            <h1 className="mt-6">
-              企業真實痛點出題！<br/>
-              讓你在 AI 時代<br/>
-              無縫接軌就業！
-            </h1>
-            <h2 className="mt-6 text-slate-300">
-              「共同核心 + 企業實作」雙軌培訓，攜手全家、全聯、老四川、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
-            </h2>
-            <div className="mt-8 w-full flex flex-wrap gap-3">
-              <a href="#classes" className="btn-primary">
-                實戰班別
-                <span className="btn-arrow">→</span>
-              </a>
-              <a href="#structure" className="btn-ghost">
-                查看課程架構
-              </a>
-            </div>
-          </div>
-          <div className="p-5 rounded-3xl glass flex flex-col 2xl:col-span-2 2xl:h-full">
-            <div className="px-1 pt-1 pb-4">
-              <span className="card-eyebrow">四大課程亮點</span>
-              <h3 className="mt-2">青年 AI 實戰養成班</h3>
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="feature-card">
-                <div>
-                  <h4 className="text-white">企業真實出題，絕非紙上談兵</h4>
-                  <p>深入全家、全聯、老四川、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。</p>
-                </div>
-              </div>
-              <div className="feature-card">
-                <div>
-                  <h4 className="text-white">n8n 自動化工作流 × 專業能力認證</h4>
-                  <p>課程全面導入主流自動化工作流工具 n8n，由業界專家親自指導實戰，並規劃專業能力認證，為你的履歷加值。</p>
-                </div>
-              </div>
-              <div className="feature-card">
-                <div>
-                  <h4 className="text-white">企業面談媒合，就業無縫對接</h4>
-                  <p>結訓前為學員量身打造專屬企業就業媒合發表會，高層主管直接現場出擊，目標達成 75% 以上的超高就業率。</p>
-                </div>
-              </div>
-              <div className="feature-card">
-                <div>
-                  <h4 className="text-white">求職必勝！個人精美實作作品集</h4>
-                  <p>實作專題成果將在導師指導下轉化為個人專屬作品集，讓你的履歷不再流於空談。</p>
-                </div>
-              </div>
-            </div>
-            <a
-              href="https://forms.gle/GshWTTKFPMVxH7Bx7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="apply-btn w-full mt-5 inline-flex items-center justify-center text-center"
-            >
-              立即報名 →
-            </a>
+  return (
+    <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
+      <div className="max-w-[90rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-start text-left gap-6">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-3 justify-start">
+          <a
+            href="https://law.usc.edu.tw/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="實踐大學法學院"
+            className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src={uscLawLogo}
+              alt="Shih Chien University"
+              width={538}
+              height={129}
+              className="h-[40px] md:h-[50px] w-auto"
+            />
+          </a>
+          <div className="badge-pill">
+            <span className="badge-tag">115-116 年度</span>
+            強化服務業人才韌性計畫
           </div>
         </div>
 
-        <div className="max-w-[110rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 mt-10 2xl:mt-14">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {stats.map((s, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-white/10 bg-white/[0.05] px-5 py-4 backdrop-blur-md shadow-[0_20px_50px_-28px_rgba(61,90,255,0.6)]"
-              >
-                <div className="flex items-end gap-1">
-                  <span className="stat-num">{s.value}</span>
-                  <span className="mb-1 text-sm font-bold text-[#3D5AFF]">{s.unit}</span>
-                </div>
-                <p className="mt-1.5 font-medium !text-slate-300">{s.label}</p>
-              </div>
-            ))}
-          </div>
+        <h1 className="mt-2">
+          別讓技術成為門檻<br/>
+          讓 <span className="hero-highlight">AI</span> 成為你職涯翻倍的跳板！
+        </h1>
+
+        <p className="max-w-xl text-base md:text-lg !text-slate-300">
+          零技術背景也能上手，結訓即具備企業搶著要的智慧營運即戰力。
+        </p>
+
+        <div className="mt-2 w-full flex flex-wrap justify-start gap-3">
+          <a href="#classes" className="btn-primary">
+            實戰班別
+            <span className="btn-arrow">→</span>
+          </a>
+          <a href="#structure" className="btn-ghost">
+            查看課程架構
+          </a>
         </div>
-      </section>
-    )
+
+        <p className="mt-4 text-xs md:text-sm tracking-wide !text-slate-400">
+          100% 政府補助　·　240 小時企業實戰　·　75% 就業媒合目標
+        </p>
+      </div>
+    </section>
+  )
 }

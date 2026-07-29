@@ -46,7 +46,7 @@ export default function RootLayout({
           <Footer />
         </footer>
         <a
-          href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+          href="https://forms.gle/rqz6VSu5NSuQJFMy5"
           target="_blank"
           rel="noopener noreferrer"
           className="apply-btn lg:hidden fixed bottom-5 right-5 z-50 px-6 py-3 text-[15px] font-bold shadow-2xl"

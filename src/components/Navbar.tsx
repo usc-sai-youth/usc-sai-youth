@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
-import uscLawLogo from "@/public/logos/usc-law-logo.png"
+import uscLawLogo from "@/public/logos/use-law-white-logo.png"
 import moeaLogo from "@/public/logos/moea-white-logo.png"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,9 +32,9 @@ export default function Navbar() {
             <Image
               src={uscLawLogo}
               alt="Shih Chien University"
-              width={90}
-              height={30}
-              className="h-[20px] md:h-[30px] w-auto"
+              width={538}
+              height={129}
+              className="h-[30px] md:h-[40px] w-auto"
             />
           </a>
           <h4 className="hidden sm:block whitespace-nowrap text-[13px] md:text-[16px] font-semibold leading-none tracking-tight text-white/90">
@@ -62,7 +62,7 @@ export default function Navbar() {
           <a href="#process">甄選流程</a>
           <a href="#faq">FAQ</a>
           <a
-            href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+            href="https://forms.gle/rqz6VSu5NSuQJFMy5"
             target="_blank"
             rel="noopener noreferrer"
             className="apply-btn ml-2 inline-flex items-center justify-center"
@@ -82,7 +82,7 @@ export default function Navbar() {
           <a href="#process" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">甄選流程</a>
           <a href="#faq" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">FAQ</a>
           <a
-            href="https://forms.gle/GshWTTKFPMVxH7Bx7"
+            href="https://forms.gle/rqz6VSu5NSuQJFMy5"
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
