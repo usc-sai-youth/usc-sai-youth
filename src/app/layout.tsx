@@ -42,7 +42,7 @@ export default function RootLayout({
         <main className="flex flex-col w-full justify-center">
           {children}
         </main>
-        <footer>
+        <footer className="relative z-10">
           <Footer />
         </footer>
         <a

@@ -438,3 +438,22 @@ hr {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+@keyframes shiny {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-shiny {
+  animation: shiny 6s linear infinite;
+}
+
+.page-shell-bg {
+  background-color: #05071A;
+  background-image:
+    radial-gradient(900px 520px at 50% -6%, rgba(61, 90, 255, 0.30) 0%, transparent 60%),
+    radial-gradient(760px 560px at 10% 38%, rgba(61, 90, 255, 0.16) 0%, transparent 55%),
+    radial-gradient(760px 560px at 90% 72%, rgba(61, 90, 255, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, #05071A 0%, #070A22 60%, #05071A 100%);
+  background-attachment: fixed;
+}
