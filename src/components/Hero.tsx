@@ -11,7 +11,7 @@ export default function Hero() {
           別讓技術成為門檻<br/>
           讓 <CanvasText
             text="AI"
-            className="align-baseline drop-shadow-[0_0_20px_rgba(51,85,255,0.85)]"
+            className="extra-large align-baseline drop-shadow-[0_0_20px_rgba(51,85,255,0.85)]"
             backgroundClassName="bg-[#1A2FCC]"
             colors={["#3355FF", "#2C4EFF", "#4466FF", "#1F3EE0", "#3C5CFF"]}
             lineWidth={2.5}

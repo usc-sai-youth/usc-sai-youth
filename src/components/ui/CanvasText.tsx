@@ -116,9 +116,10 @@ export function CanvasText({
 
     ctx.font = font;
     const metrics = ctx.measureText(text);
-    const ascent = metrics.actualBoundingBoxAscent;
-    const descent = metrics.actualBoundingBoxDescent;
-    const baselineY = (height + ascent - descent) / 2;
+    const fontAscent = metrics.fontBoundingBoxAscent ?? metrics.actualBoundingBoxAscent;
+    const fontDescent = metrics.fontBoundingBoxDescent ?? metrics.actualBoundingBoxDescent;
+    const halfLeading = (height - (fontAscent + fontDescent)) / 2;
+    const baselineY = halfLeading + fontAscent;
 
     const numLines = Math.floor(height / lineGap) + 10;
     startTimeRef.current = performance.now();
