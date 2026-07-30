@@ -18,6 +18,11 @@ export default function Navbar() {
     setMenuOpen(false)
   }
 
+  const scrollToHero = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
       <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/10 shadow-lg shadow-black/40 rounded-full bg-white/[0.06] backdrop-blur-md">
@@ -37,9 +42,9 @@ export default function Navbar() {
               className="h-[30px] md:h-[40px] w-auto"
             />
           </a>
-          <h4 className="hidden sm:block whitespace-nowrap text-[13px] md:text-[16px] font-semibold leading-none tracking-tight text-white/90">
+          <a href="#hero" onClick={scrollToHero} className="hidden sm:block whitespace-nowrap text-[13px] md:text-[16px] font-semibold leading-none tracking-tight text-white/90">
             青年AI實戰養成班
-          </h4>
+          </a>
           {/* <a
             href="https://www.aoc.gov.tw/"
             target="_blank"
@@ -57,9 +62,9 @@ export default function Navbar() {
           </a> */}
         </div>
         <div className="hidden lg:inline lg:flex lg:items-center lg:gap-2 lg:text-[18px]">
-          <a href="#highlights">計畫亮點</a>
+          <a href="#program">計畫詳情</a>
           <a href="#classes">實戰班別</a>
-          <a href="#process">甄選流程</a>
+          <a href="#process">報名資格</a>
           <a href="#faq">FAQ</a>
           <a
             href="https://forms.gle/rqz6VSu5NSuQJFMy5"

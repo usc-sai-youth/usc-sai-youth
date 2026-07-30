@@ -29,7 +29,7 @@ export default function ProgramHighlights() {
   ];
 
   return (
-    <section className="px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--white-bg)]">
+    <section id="program" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--white-bg)]">
       <div className="flex flex-col items-center gap-4">
         <a
           href="https://law.usc.edu.tw/"

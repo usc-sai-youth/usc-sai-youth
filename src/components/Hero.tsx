@@ -106,7 +106,7 @@ function LoopingVideoBackground() {
 export default function Hero() {
   return (
     <section
-      className={`${inter.className} fixed inset-0 z-0 overflow-hidden bg-[#0c0c0c] text-white pt-16 md:pt-28 pb-20 flex flex-col justify-center items-center text-center`}
+      id="hero" className={`${inter.className} scroll-mt-24 fixed inset-0 z-0 overflow-hidden bg-[#0c0c0c] text-white pt-16 md:pt-28 pb-20 flex flex-col justify-center items-center text-center`}
     >
       <svg width="0" height="0" className="absolute">
         <filter id="c3-noise">
@@ -151,12 +151,11 @@ export default function Hero() {
           className="mt-10"
         >
           <a
-            href="https://forms.gle/rqz6VSu5NSuQJFMy5"
-            target="_blank"
+            href="#program"
             rel="noopener noreferrer"
-            className="apply-btn inline-flex items-center justify-center text-center"
+            className="text-lg md:text-xl lg:text-2xl apply-btn inline-flex items-center justify-center text-center"
           >
-            立即報名 →
+            開始探索 →
           </a>
         </motion.div>
       </div>
