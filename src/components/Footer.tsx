@@ -62,10 +62,10 @@ export default function Footer() {
         <div className="mt-10 flex flex-col md:flex-row justify-center items-center">
           <p className="text-center">計畫主持人：郝鳳鳴 教授</p>
           <span className="hidden md:inline mx-2">|</span>
-          <p className="text-center">計畫聯絡窗口：陳毓雯 老師 (0972-104-456)</p>
+          <p className="text-center">計畫聯絡窗口：陳毓雯 老師 (02)25381111 轉 6118</p>
         </div>
         <div className="mt-5 flex flex-col md:flex-row justify-center items-center">
-          <p className="text-center">聯絡信箱：uscsaiyouth@gmail.com</p>
+          <p className="text-center">聯絡信箱：sheba@g2.usc.edu.tw</p>
           <span className="hidden md:inline mx-2">|</span>
           <p className="text-center">地址：台北市中山區大直街 70 號</p>
         </div>

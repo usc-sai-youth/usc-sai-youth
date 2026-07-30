@@ -5,7 +5,7 @@ import { CanvasText } from "./ui/CanvasText";
 export default function Hero() {
   return (
     <section className="hero-bg min-h-screen pt-[7rem] pb-16 flex flex-col justify-center items-center">
-      <div className="max-w-[90rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-start text-left gap-6">
+      <div className="max-w-[120rem] w-full mx-auto px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-start text-left gap-6">
 
         <h1 className="mt-2">
           別讓技術成為門檻<br/>
