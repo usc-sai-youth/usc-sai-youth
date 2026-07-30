@@ -20,9 +20,9 @@ export default function Hero() {
           /> 成為你職涯翻倍的跳板！
         </h1>
 
-        <p className="max-w-xl text-base md:text-lg !text-slate-300">
+        <h3 className="max-w-xl md:max-w-3xl text-base md:text-2xl !text-slate-300">
           零技術背景也能上手，結訓即具備企業搶著要的智慧營運即戰力。
-        </p>
+        </h3>
 
         {/* <p className="mt-4 text-xs md:text-sm tracking-wide !text-slate-400">
           100% 政府補助　·　240 小時企業實戰　·　75% 就業媒合目標

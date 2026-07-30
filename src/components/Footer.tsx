@@ -70,7 +70,7 @@ export default function Footer() {
           <p className="text-center">地址：台北市中山區大直街 70 號</p>
         </div>
         <div className="mt-10">
-          <h5 className="text-center text-slate-500">© 2026 實踐大學. All Rights Reserved. 個人資料保護與隱私權聲明</h5>
+          <h5 className="text-center text-slate-500">© 2026 實踐法律 | Developed by Yin Hsuan Chen</h5>
         </div>
       </div>
     </>
