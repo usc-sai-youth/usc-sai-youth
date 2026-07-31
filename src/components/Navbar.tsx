@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
@@ -9,6 +9,7 @@ import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
 import moeaLogo from "@/public/logos/moea-white-logo.png"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev)
@@ -18,13 +19,26 @@ export default function Navbar() {
     setMenuOpen(false)
   }
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
+
   const scrollToHero = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
-    <div className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
+    <div ref={navRef} className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
       <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/10 shadow-lg shadow-black/40 rounded-full bg-white/[0.06] backdrop-blur-md">
         <div className="flex gap-2 md:gap-4 items-center">
           <a
@@ -80,23 +94,28 @@ export default function Navbar() {
           <Bars3Icon className="lg:hidden w-6 h-6 text-white hover:text-gray-300 cursor-pointer" onClick={toggleMenu} />
         }
       </div>
-      {menuOpen && (
-        <div className="glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-[#0b1030]/95 text-white backdrop-blur-md">
-          <a href="#highlights" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">計畫亮點</a>
-          <a href="#classes" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">實戰班別</a>
-          <a href="#process" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">甄選流程</a>
-          <a href="#faq" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">FAQ</a>
-          <a
-            href="https://forms.gle/rqz6VSu5NSuQJFMy5"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className="apply-btn w-full h-10 inline-flex items-center justify-center"
-          >
-            我要報名
-          </a>
-        </div>
-      )}
+      <div
+        className={`glass lg:hidden mx-5 md:mx-10 p-6 flex flex-col gap-2 items-center rounded-3xl bg-[#0b1030]/95 text-white backdrop-blur-md origin-top transition-all duration-300 ease-out ${
+          menuOpen
+            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+        }`}
+        aria-hidden={!menuOpen}
+      >
+        <a href="#program" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">計畫詳情</a>
+        <a href="#classes" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">實戰班別</a>
+        <a href="#process" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">報名資格</a>
+        <a href="#faq" onClick={closeMenu} className="transition-colors w-full h-10 flex items-center justify-center">FAQ</a>
+        <a
+          href="https://forms.gle/rqz6VSu5NSuQJFMy5"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={closeMenu}
+          className="apply-btn w-full h-10 inline-flex items-center justify-center"
+        >
+          我要報名
+        </a>
+      </div>
     </div>
   );
 } 
