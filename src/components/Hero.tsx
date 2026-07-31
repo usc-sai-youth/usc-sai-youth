@@ -141,7 +141,7 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-xl md:text-2xl lg:text-3xl mt-8 text-white/60 max-w-xl text-base leading-[1.5]"
         >
-          未來由你定義，送你一張AI職涯入場券！
+          <span className="font-black">未來</span> 由你定義，送你一張 <span className="font-black">AI職涯入場券</span>！
         </motion.p>
 
         <motion.div
