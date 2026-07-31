@@ -49,7 +49,7 @@ export default function RootLayout({
           href="https://forms.gle/rqz6VSu5NSuQJFMy5"
           target="_blank"
           rel="noopener noreferrer"
-          className="apply-btn lg:hidden fixed bottom-5 right-5 z-50 px-6 py-3 text-[15px] font-bold shadow-2xl"
+          className="apply-btn lg:hidden fixed bottom-2 right-5 z-50 px-6 py-3 text-[15px] font-bold shadow-2xl"
         >
           立即報名
         </a>
