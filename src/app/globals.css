@@ -448,6 +448,12 @@ hr {
   animation: shiny 9s linear infinite;
 }
 
+@media (max-width: 767px) {
+  .animate-shiny {
+    animation-duration: 6s;
+  }
+}
+
 .page-shell-bg {
   background-color: #05071A;
   background-image:
