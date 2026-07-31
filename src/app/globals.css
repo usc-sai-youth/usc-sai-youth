@@ -440,12 +440,12 @@ hr {
 }
 
 @keyframes shiny {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
 
 .animate-shiny {
-  animation: shiny 6s linear infinite;
+  animation: shiny 9s linear infinite;
 }
 
 .page-shell-bg {
