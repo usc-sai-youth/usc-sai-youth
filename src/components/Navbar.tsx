@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 
-import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
+import uscLogo from "@/public/logos/usc-white.png"
 import moeaLogo from "@/public/logos/moea-white-logo.png"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function Navbar() {
   return (
     <div ref={navRef} className="top-3 inset-x-0 fixed flex flex-col gap-2 transform-gpu will-change-transform z-50">
       <div className="mx-5 md:mx-10 px-5 py-2 md:py-4 box-border flex justify-between items-center border border-white/10 shadow-lg shadow-black/40 rounded-full bg-white/[0.06] backdrop-blur-md">
-        <div className="flex gap-2 md:gap-4 items-center">
+        <div className="flex items-center">
           <a
             href="https://law.usc.edu.tw/"
             target="_blank"
@@ -49,14 +49,14 @@ export default function Navbar() {
             className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
           >
             <Image
-              src={uscLawLogo}
+              src={uscLogo}
               alt="Shih Chien University"
-              width={538}
+              width={140}
               height={129}
               className="h-[30px] md:h-[40px] w-auto"
             />
           </a>
-          <a href="#hero" onClick={scrollToHero} className="hidden sm:block whitespace-nowrap text-[13px] md:text-[16px] font-semibold leading-none tracking-tight text-white/90">
+          <a href="#hero" onClick={scrollToHero} className="whitespace-nowrap px-[10px] text-[18px] md:text-[20px] lg:text-[24px] font-semibold leading-none tracking-tight text-white/90">
             青年AI實戰養成班
           </a>
           {/* <a

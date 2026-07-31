@@ -84,8 +84,8 @@ export default function ProgramHighlights() {
         <a href="#classes" className="btn-ghost-light">
           實戰班別
         </a>
-        <a href="#structure" className="btn-ghost-light">
-          查看課程架構
+        <a href="#process" className="btn-ghost-light">
+          報名資格
         </a>
         <a
           href="https://forms.gle/rqz6VSu5NSuQJFMy5"
