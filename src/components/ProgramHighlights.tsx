@@ -12,7 +12,7 @@ export default function ProgramHighlights() {
   const features = [
     {
       title: "企業真實出題，絕非紙上談兵",
-      desc: "深入全家、全聯、老四川、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
+      desc: "深入全聯、全家、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
     },
     {
       title: "n8n 自動化工作流 × 專業能力認證",
@@ -53,7 +53,7 @@ export default function ProgramHighlights() {
       </div>
       <h2 className="mt-5 text-center">青年 AI 實戰養成班</h2>
       <h4 className="mt-2 text-center text-slate-400 max-w-2xl">
-        「共同核心 + 企業實作」雙軌培訓，攜手全家、全聯、老四川、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
+        「共同核心 + 企業實作」雙軌培訓，攜手全聯、全家、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
       </h4>
 
       <div className="mt-8 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4">

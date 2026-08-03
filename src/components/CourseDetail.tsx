@@ -78,7 +78,6 @@ export default function CourseDetail() {
     "Alpha餐飲": alphaLogo,
     "聲寶頑味": sampoLogo,
     "全聯福利中心": pxMartLogo,
-    "老四川": laoSzeChuanLogo,
   }
 
   const data = courses;

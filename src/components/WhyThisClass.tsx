@@ -19,7 +19,7 @@ export default function WhyThisClass() {
       <span className="card-eyebrow">為什麼要上這堂課</span>
       <h2 className="mt-3 text-center">AI 工具好上手，掌控零售餐飲現場才是真工夫</h2>
       <h4 className="mt-2 text-center text-slate-400">
-        全家、全聯、老四川、Alpha 阿爾法與聲寶頑味的營運現場，需要能把 AI 落地到門市、顧客與內部流程的即戰力，而不是只會操作工具的人。
+        全聯、全家、Alpha 阿爾法與聲寶頑味的營運現場，需要能把 AI 落地到門市、顧客與內部流程的即戰力，而不是只會操作工具的人。
       </h4>
 
       <div className="mt-8 w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4">
