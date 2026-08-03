@@ -119,9 +119,6 @@ export default function Hero() {
 
       <LoopingVideoBackground />
 
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 left-1/2 -translate-x-[calc(50%+36rem)] w-px bg-white/10 z-[5]" />
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 left-1/2 translate-x-[calc(-50%+36rem)] w-px bg-white/10 z-[5]" />
-
       <div className="relative z-10 flex flex-col items-center">
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
