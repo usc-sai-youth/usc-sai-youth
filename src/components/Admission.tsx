@@ -23,13 +23,51 @@ export default function Admission() {
   ];
 
   const documents = [
-    "填列培訓學員申請表",
+    <>
+      <a
+        href="https://docs.google.com/document/d/1Ltd2IYO-z_MScqA0TTnjSC0WPrkPLKQb/edit?usp=drive_link&ouid=114170465966552412591&rtpof=true&sd=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="!px-0 !bg-transparent text-[#3D5AFF] underline underline-offset-2 hover:!bg-transparent hover:text-[#3D5AFF]/80"
+      >
+        培訓學員申請表
+      </a>
+    </>,
     "身分證正反影本",
     "最高學歷畢業證書影本",
     "最高學歷學校成績單影本",
-    "蒐集個人資料告知事項暨個人資料提供同意書",
-    "如有工作經驗，請檢具勞工保險異動紀錄或相關切結文件",
+    <>
+      <a
+        href="https://docs.google.com/document/d/1elAQwCon7RHWb8C03Eho4flE_Mcc6cxH/edit?usp=drive_link&ouid=114170465966552412591&rtpof=true&sd=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="!px-0 !bg-transparent text-[#3D5AFF] underline underline-offset-2 hover:!bg-transparent hover:text-[#3D5AFF]/80"
+      >
+        蒐集個人資料告知事項暨個人資料提供同意書
+      </a>
+    </>,
   ];
+
+  const workExperienceNote = (
+    <>
+      如有工作經驗者，請檢具以下資料：
+      <ul className="mt-1.5 flex flex-col gap-1 list-disc pl-4 marker:text-[#3D5AFF]">
+        <li>
+          勞工保險異動紀錄（可上網勞保局 E 化服務系統下載，網址：
+          <a
+            href="https://edesk.bli.gov.tw/me/#/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="!px-0 !bg-transparent text-[#3D5AFF] underline underline-offset-2 hover:!bg-transparent hover:text-[#3D5AFF]/80"
+          >
+            https://edesk.bli.gov.tw/me/#/home
+          </a>
+          ）
+        </li>
+        <li>如加保於職業工會、農會或漁會請於申請表中切結相關事項。</li>
+      </ul>
+    </>
+  );
 
   const steps = [
     {
@@ -55,7 +93,7 @@ export default function Admission() {
         {/* 報名資格 */}
         <div className="mt-8 w-full max-w-5xl">
           <h4 className="font-bold text-white">基本報名資格</h4>
-          <div className="mt-4 flex flex-col md:flex-row gap-4">
+          <div className="mt-4 flex flex-col items-center md:flex-row md:items-stretch gap-4">
             {requirements.map((item, index) => (
               <div className="core-card flex-1" key={index}>
                 <h4 className="text-white">{item.title}</h4>
@@ -85,14 +123,17 @@ export default function Admission() {
               <h4 className="font-bold text-white">繳交報名資料</h4>
             </div>
             <p className="mt-2 text-slate-400">應檢附資料如下：</p>
-            <ul className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5">
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
               {documents.map((item, index) => (
-                <li className="flex items-start gap-2 text-slate-300" key={index}>
-                  <span className="mt-0.5 font-bold text-[#3D5AFF]">•</span>
-                  <span>{item}</span>
+                <li className="flex items-start gap-3 text-slate-300" key={index}>
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#3D5AFF]/15 text-xs font-bold text-[#3D5AFF]">
+                    {index + 1}
+                  </span>
+                  <div className="flex-1">{item}</div>
                 </li>
               ))}
             </ul>
+            <div className="mt-4 border-t border-white/10 pt-4 text-slate-300">{workExperienceNote}</div>
           </div>
         </div>
 
@@ -101,13 +142,13 @@ export default function Admission() {
           <h4 className="text-center font-bold text-white">三階段甄選流程</h4>
           <div className="mt-6 flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
             {steps.map((step, index) => (
-              <div className="flex flex-col md:flex-row md:flex-1 md:items-center gap-4 md:gap-0" key={index}>
-                <div className="core-card flex-1 !items-start">
+              <div className="flex flex-col items-center md:flex-row md:flex-1 md:items-center gap-4 md:gap-0" key={index}>
+                <div className="core-card flex-1 md:!items-start">
                   <div className="flex items-center gap-3">
                     <div className="numbering-icon">{index + 1}</div>
                     <h4 className="text-white">{step.title}</h4>
                   </div>
-                  <p>{step.desc}</p>
+                  <p className="text-center md:text-left">{step.desc}</p>
                 </div>
                 {index < steps.length - 1 && (
                   <div className="flex shrink-0 justify-center items-center text-[#3D5AFF] md:px-2">
@@ -118,6 +159,9 @@ export default function Admission() {
               </div>
             ))}
           </div>
+          <p className="mt-4 text-center text-sm text-slate-400">
+            實際甄選作業依各培訓單位規定辦理，審核結果將以 Email 通知，請留意信箱通知。
+          </p>
         </div>
       </section>
     </>
