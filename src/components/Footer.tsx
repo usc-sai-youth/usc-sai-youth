@@ -40,24 +40,7 @@ export default function Footer() {
             </a>
           </div>
           <p>執行單位：商業服務業 AI 人才辦公室</p>
-          <div className="flex flex-row items-center">
-            <p>承辦單位：</p>
-            <a
-              href="https://law.usc.edu.tw/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="實踐大學法學院"
-              className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
-            >
-              <Image
-                src={uscLawLogo}
-                alt="Shih Chien Law"
-                width={120}
-                height={40}
-                className="h-[40px] w-auto"
-              />
-            </a>
-          </div>
+          <p>培訓單位：實踐大學法學院</p>
         </div>
         <div className="mt-10 flex flex-col md:flex-row justify-center items-center">
           <p className="text-center">計畫主持人：郝鳳鳴 教授</p>

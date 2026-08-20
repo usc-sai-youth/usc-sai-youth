@@ -176,7 +176,7 @@ export default function CourseDetail() {
             >
               <div className="flex justify-between">
                 <h5 className={`py-1 px-3 rounded-md ${index === selected ? "bg-[#5B77FF] text-[#FFFFFF]" : "bg-[#D9E0FF] text-[#303F9F]"}`}>{cls.location}</h5>
-                <h5 className={index === selected ? "text-[#7986CB]" : ""}>{getMMDD(cls.startDate)} - {getMMDD(cls.endDate)}</h5>
+                <h5 className={index === selected ? "text-[#7986CB]" : ""}>{getMMDD(cls.startDate)} - {getMMDD(cls.endDate)}（暫定）</h5>
               </div>
               <p className={`mt-3 font-black ${index === selected ? "text-white" : ""}`}>{cls.title}</p>
               <h5 className={`mt-1 ${index === selected ? "text-[#8CA0FF]" : "text-[#9DB0FF]"}`}>合作企業：{cls.corp.join('/')}</h5>
