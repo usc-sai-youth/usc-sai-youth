@@ -344,7 +344,7 @@ export default function CourseDetail() {
                               <p className="mt-2.5 text-slate-300 leading-relaxed">{unit.desc}</p>
                               <div className="mt-3 flex flex-col gap-1.5 border-t border-white/10 pt-3 text-xs text-slate-400 sm:flex-row sm:flex-wrap sm:gap-x-5">
                                 <span className="inline-flex items-start gap-1"><span className="font-medium">講師：</span>{unit.instructor}</span>
-                                {/* <span className="inline-flex items-start gap-1"><span className="font-medium">地點：</span>{unit.location}</span> */}
+                                <span className="inline-flex items-start gap-1"><span className="font-medium">地點：</span>{unit.location}</span>
                               </div>
                             </div>
                           </div>

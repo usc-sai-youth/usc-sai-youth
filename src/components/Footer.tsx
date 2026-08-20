@@ -65,7 +65,7 @@ export default function Footer() {
           <p className="text-center">計畫聯絡窗口：袁廣樺 老師 0982-506-411</p>
         </div>
         <div className="mt-5 flex flex-col md:flex-row justify-center items-center">
-          <p className="text-center">聯絡信箱：bio0313@ghotmail.com</p>
+          <p className="text-center">聯絡信箱：bio0313@hotmail.com</p>
           <span className="hidden md:inline mx-2">|</span>
           <p className="text-center">地址：台北市中山區大直街 70 號</p>
         </div>
