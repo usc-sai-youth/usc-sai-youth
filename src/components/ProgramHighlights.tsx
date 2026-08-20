@@ -12,7 +12,7 @@ export default function ProgramHighlights() {
   const features = [
     {
       title: "企業真實出題，絕非紙上談兵",
-      desc: "深入全聯、全家、阿爾法等頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
+      desc: "深入全聯、全家、阿爾法及頑味頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
     },
     {
       title: "n8n 自動化工作流 × 專業能力認證",
