@@ -142,13 +142,13 @@ export default function Admission() {
           <h4 className="text-center font-bold text-white">三階段甄選流程</h4>
           <div className="mt-6 flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0">
             {steps.map((step, index) => (
-              <div className="flex flex-col items-center md:flex-row md:flex-1 md:items-center gap-4 md:gap-0" key={index}>
-                <div className="core-card flex-1 md:!items-start">
+              <div className="flex flex-col  md:flex-row md:flex-1 md:items-center gap-4 md:gap-0" key={index}>
+                <div className="core-card flex-1 !items-start">
                   <div className="flex items-center gap-3">
                     <div className="numbering-icon">{index + 1}</div>
                     <h4 className="text-white">{step.title}</h4>
                   </div>
-                  <p className="text-center md:text-left">{step.desc}</p>
+                  <p>{step.desc}</p>
                 </div>
                 {index < steps.length - 1 && (
                   <div className="flex shrink-0 justify-center items-center text-[#3D5AFF] md:px-2">
