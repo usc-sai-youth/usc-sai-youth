@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import moeaLogo from "@/public/logos/moea-white-logo.png"
-import uscLawLogo from "@/public/logos/usc-law-school-white.png"
+import uscLogo from "@/public/logos/usc-white-logo.png"
 
 export default function Footer() {
   return (
@@ -40,7 +40,24 @@ export default function Footer() {
             </a>
           </div>
           <p>執行單位：商業服務業 AI 人才辦公室</p>
-          <p>培訓單位：實踐大學法學院</p>
+          <div className="flex flex-row items-center">
+            <p>培訓單位：</p>
+            <a
+              href="https://www.usc.edu.tw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="實踐大學"
+              className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+            >
+              <Image
+                src={uscLogo}
+                alt="Administration of Commerce, MOEA"
+                width={538}
+                height={129}
+                className="h-[40px] w-auto"
+              />
+            </a>
+          </div>
         </div>
         <div className="mt-10 flex flex-col md:flex-row justify-center items-center">
           <p className="text-center">計畫主持人：郝鳳鳴 教授</p>
