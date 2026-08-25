@@ -1,6 +1,6 @@
 import Image from "next/image";
 import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
-import moeaLogo from "@/public/logos/moea-white-logo.png"
+import uscLogo from "@/public/logos/usc-white-logo.png"
 
 export default function ProgramHighlights() {
   const stats = [
@@ -50,14 +50,13 @@ export default function ProgramHighlights() {
           className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
         >
           <Image
-            src={moeaLogo}
+            src={uscLogo}
             alt="Shih Chien University"
             width={538}
             height={129}
             className="h-[30px] md:h-[40px] w-auto"
           />
         </a>
-        <h2>x</h2>
         <a
           href="https://law.usc.edu.tw/"
           target="_blank"
