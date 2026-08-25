@@ -1,5 +1,6 @@
 import Image from "next/image";
 import uscLawLogo from "@/public/logos/usc-law-white-logo.png"
+import moeaLogo from "@/public/logos/moea-white-logo.png"
 
 export default function ProgramHighlights() {
   const stats = [
@@ -31,6 +32,32 @@ export default function ProgramHighlights() {
   return (
     <section id="program" className="scroll-mt-24 px-5 py-[5rem] flex flex-col justify-center items-center bg-[var(--white-bg)]">
       <div className="flex flex-col items-center gap-4">
+        <div className="badge-pill-light">
+          <span className="badge-tag">115-116 年度</span>
+          強化服務業人才韌性計畫
+        </div>
+        <h1 className="mt-1 text-center">青年 AI 實戰養成班</h1>
+      </div>
+      <h4 className="mt-2 text-center text-slate-400 max-w-3xl">
+        「共同核心 + 企業實作」雙軌培訓，攜手全聯、全家、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
+      </h4>
+      <div className="mt-2 md:mt-5 flex gap-5 justify-center items-center">
+        <a
+          href="https://www.aoc.gov.tw/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="經濟部商業發展署"
+          className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
+        >
+          <Image
+            src={moeaLogo}
+            alt="Shih Chien University"
+            width={538}
+            height={129}
+            className="h-[30px] md:h-[40px] w-auto"
+          />
+        </a>
+        <h2>x</h2>
         <a
           href="https://law.usc.edu.tw/"
           target="_blank"
@@ -43,18 +70,10 @@ export default function ProgramHighlights() {
             alt="Shih Chien University"
             width={538}
             height={129}
-            className="h-[70px] md:h-[80px] w-auto"
+            className="h-[30px] md:h-[40px] w-auto"
           />
         </a>
-        <div className="mt-2 md:mt-5 badge-pill-light">
-          <span className="badge-tag">115-116 年度</span>
-          強化服務業人才韌性計畫
-        </div>
       </div>
-      <h2 className="mt-5 text-center">青年 AI 實戰養成班</h2>
-      <h4 className="mt-2 text-center text-slate-400 max-w-2xl">
-        「共同核心 + 企業實作」雙軌培訓，攜手全聯、全家、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
-      </h4>
 
       <div className="mt-8 w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4">
         {features.map((item, index) => (
