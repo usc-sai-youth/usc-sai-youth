@@ -43,10 +43,10 @@ export default function ProgramHighlights() {
       </h4>
       <div className="mt-2 md:mt-5 flex gap-5 justify-center items-center">
         <a
-          href="https://www.aoc.gov.tw/"
+          href="https://www.usc.edu.tw/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="經濟部商業發展署"
+          aria-label="實踐大學"
           className="inline-flex items-center !p-0 hover:!bg-transparent hover:opacity-80 transition-opacity"
         >
           <Image
