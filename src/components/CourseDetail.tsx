@@ -2,11 +2,9 @@
 import React, {useState, useRef, useEffect} from "react";
 import Image, {type StaticImageData} from "next/image";
 import {courses} from "@/src/data/courses";
-import alphaLogo from "@/public/logos/alpha-logo.png"
 import familyMartLogo from "@/public/logos/family-mart-logo.png"
 import laoSzeChuanLogo from "@/public/logos/lao-sze-chuan-logo.png"
 import pxMartLogo from "@/public/logos/px-mart-logo.png"
-import sampoLogo from "@/public/logos/sampo-logo.png"
 
 export default function CourseDetail() {
   const [selected, setSelected] = useState(0);
@@ -75,8 +73,6 @@ export default function CourseDetail() {
 
   const logos: Record<string, StaticImageData> = {
     "全家便利商店": familyMartLogo,
-    "Alpha餐飲": alphaLogo,
-    "聲寶頑味": sampoLogo,
     "全聯福利中心": pxMartLogo,
   }
 
@@ -150,7 +146,7 @@ export default function CourseDetail() {
     <>
       <section id="classes" className="scroll-mt-24 py-[5rem] flex flex-col justify-center items-center bg-[var(--gray-bg)]">
         <h2 className="text-center">選擇最適合你的職涯加速器</h2>
-        <h4 className="mt-2 text-center text-slate-400">零售 × 餐飲兩大次產業實戰班別，台北開課</h4>
+        <h4 className="mt-2 text-center text-slate-400">同一零售核心、區域化執行，台北、台中兩地開課</h4>
         <div className="hint-bob mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-1.5 text-sm text-slate-300 backdrop-blur-md">
           <span className="font-bold text-[#8CA0FF]">←</span>
           點擊卡片或左右滑動，選擇你的班別

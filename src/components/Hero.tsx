@@ -106,7 +106,7 @@ function LoopingVideoBackground() {
 export default function Hero() {
   return (
     <section
-      id="hero" className={`${inter.className} scroll-mt-24 fixed inset-0 z-0 overflow-hidden bg-[#0c0c0c] text-white pt-16 md:pt-28 pb-20 flex flex-col justify-center items-center text-center`}
+      id="hero" className={`${inter.className} scroll-mt-24 sticky top-0 z-0 h-[100dvh] w-full overflow-hidden bg-[#0c0c0c] text-white pt-16 md:pt-28 pb-20 flex flex-col justify-center items-center text-center`}
     >
       <svg width="0" height="0" className="absolute">
         <filter id="c3-noise">

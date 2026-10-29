@@ -4,7 +4,7 @@ import uscLogo from "@/public/logos/usc-white-logo.png"
 
 export default function ProgramHighlights() {
   const stats = [
-    { value: "2", unit: "班", label: "零售 × 餐飲實戰班" },
+    { value: "2", unit: "班", label: "台北 × 台中零售實戰班" },
     { value: "240", unit: "hr", label: "雙階段培訓時數" },
     { value: "75", unit: "%", label: "就業媒合目標" },
     { value: "5", unit: "萬", label: "學習獎勵金" },
@@ -13,7 +13,7 @@ export default function ProgramHighlights() {
   const features = [
     {
       title: "企業真實出題，絕非紙上談兵",
-      desc: "深入全聯、全家、阿爾法及頑味頂尖大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
+      desc: "深入全聯、全家頂尖零售大廠的真實營運場域，拿第一線最落地的數據與痛點做專題實作。",
     },
     {
       title: "n8n 自動化工作流 × 專業能力認證",
@@ -39,7 +39,7 @@ export default function ProgramHighlights() {
         <h1 className="mt-1 text-center">青年 AI 實戰養成班</h1>
       </div>
       <h4 className="mt-2 text-center text-slate-400 max-w-3xl">
-        「共同核心 + 企業實作」雙軌培訓，攜手全聯、全家、阿爾法餐飲、聲寶頑味餐飲，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
+        「共同核心 + 企業實作」雙軌培訓，攜手全聯、全家，助你成為新世代智慧營運與 CX 解題專家！政府補助 100% 全額免費。
       </h4>
       <div className="mt-2 md:mt-5 flex gap-5 justify-center items-center">
         <a

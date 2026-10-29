@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero/>
-      <div className="relative z-10 mt-[100vh] page-shell-bg">
+      <div className="relative z-10 page-shell-bg">
         <Reveal><ProgramHighlights/></Reveal>
         <Reveal><WhyThisClass/></Reveal>
         <Reveal><Core/></Reveal>
