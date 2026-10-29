@@ -25,7 +25,7 @@ export default function Admission() {
   const documents = [
     <>
       <a
-        href="https://docs.google.com/document/d/1Ltd2IYO-z_MScqA0TTnjSC0WPrkPLKQb/edit?usp=drive_link&ouid=114170465966552412591&rtpof=true&sd=true"
+        href="https://drive.google.com/file/d/1eAJTBSxrcExWxSK5NF7Ppc3LWXttO532/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="!px-0 !bg-transparent text-[#3D5AFF] underline underline-offset-2 hover:!bg-transparent hover:text-[#3D5AFF]/80"
@@ -38,7 +38,7 @@ export default function Admission() {
     "最高學歷學校成績單影本",
     <>
       <a
-        href="https://docs.google.com/document/d/1elAQwCon7RHWb8C03Eho4flE_Mcc6cxH/edit?usp=drive_link&ouid=114170465966552412591&rtpof=true&sd=true"
+        href="https://drive.google.com/file/d/1tHqmfGSyKRantzSFYbMhr8-FOlqHEZYM/view?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
         className="!px-0 !bg-transparent text-[#3D5AFF] underline underline-offset-2 hover:!bg-transparent hover:text-[#3D5AFF]/80"
