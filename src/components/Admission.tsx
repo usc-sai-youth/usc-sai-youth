@@ -160,7 +160,7 @@ export default function Admission() {
             ))}
           </div>
           <p className="mt-4 text-center text-sm text-slate-400">
-            實際甄選作業依各培訓單位規定辦理，審核結果將以 Email 通知，請留意信箱通知。
+            實際甄選作業依各培訓單位規定辦理，審核結果將以 Email 或 電話 通知，請留意信箱通知。
           </p>
         </div>
       </section>
